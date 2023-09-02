@@ -1,27 +1,42 @@
 # PortalLedes
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+## Arquitetura de pastas
+```
+|app 
+|  ├── core 
+|      ├── components 
+|      ├── model 
+|  ├── features 
+|  ├── shared 
+```
+**Core:** Aqui fica o núcleo do sistema, componentes como o header e o footer, definições padrão de CSS como o tema e os models deverão ser colocados nessa pasta.
 
-## Development server
+**Features:** Nessa pasta ficam as funcionalidades do sistema separadas por módulos, abaixo um exemplo ilustrativo da separação em modulos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+```
+|-- features
+    |-- projetos
+        |-- components
+            |-- [+] listar-projetos
+            |-- [+] novo-projeto
+            |-- projetos-components.module.ts
+        |-- projetos.component.ts
+        |-- projetos.component.html
+        |-- projetos.component.scss
+        |-- projetos.component.spec
+        |-- projetos.module.ts
+    |-- usuarios
+        |-- components
+            |-- [+] listar-usuarios
+            |-- [+] novo-usuario
+            |-- usuarios-components.module.ts
+        |-- usuarios.component.ts
+        |-- usuarios.component.html
+        |-- usuarios.component.scss
+        |-- usuarios.component.spec
+        |-- usuarios.module.ts
+```
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Shared:** Essa é a pasta destinada a tudo que compartilhado no sistema, componentes reutilizaveis, pipes, etc.
+#
+***OBS:** Como ainda não há componentes as pastas não foram mapeadas pelo git*
