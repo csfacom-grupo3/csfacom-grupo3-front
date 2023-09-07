@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./secao-administrativa.component.css']
 })
 export class SecaoAdministrativaComponent {
-  name = "Projeto";
+  name = "Projetos";
   img = "../../../../assets/icons/engrenagens.svg"
 }
