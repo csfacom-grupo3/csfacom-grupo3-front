@@ -9,6 +9,10 @@
     }
 
     .titulo{
-        @apply text-4xl text-[#0099CB]
+        @apply text-4xl text-[#0099CB] max-sm:text-2xl
+    }
+
+    .borda-opaca{
+        @apply border-solid border-2
     }
 }
