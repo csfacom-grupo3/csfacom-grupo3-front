@@ -4,7 +4,11 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'azul': '#0099CB',
+      }
+    },
     fontFamily: {
       sans: ['Poppins', 'sans'],
     }

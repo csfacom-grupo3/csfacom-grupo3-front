@@ -1,4 +1,32 @@
-<app-card
-    [img]="img"
-    [name]="name"
-    ></app-card>
+<div class="center mt-8 mb-8">
+    <h1 class="titulo">SEÇÃO ADMINISTRATIVA</h1>
+</div>
+
+<nav class="center">
+    <div class="w-9/12">
+        <div class="flex flex-row justify-evenly">
+            <app-card 
+                [img]="cards[0].Icon" 
+                [name]="cards[0].Nome"></app-card>
+            
+            <app-card 
+                [img]="cards[1].Icon" 
+                [name]="cards[1].Nome"></app-card>
+            
+            <app-card 
+                [img]="cards[2].Icon" 
+                [name]="cards[2].Nome"></app-card>
+        </div>
+
+        <div class="flex flex-row justify-evenly">
+            <app-card 
+                [img]="cards[3].Icon" 
+                [name]="cards[3].Nome"></app-card>
+
+            <app-card 
+                [img]="cards[4].Icon" 
+                [name]="cards[4].Nome"></app-card>
+        </div>    
+    </div>    
+
+</nav>
