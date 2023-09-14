@@ -7,7 +7,8 @@
         <div class="flex flex-row justify-evenly max-sm:flex-col">
             <app-card 
                 [img]="cards[0].Icon" 
-                [name]="cards[0].Nome"></app-card>
+                [name]="cards[0].Nome"
+                (click)="abrirModal()"></app-card>
             
             <app-card 
                 [img]="cards[1].Icon" 
