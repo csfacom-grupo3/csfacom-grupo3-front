@@ -11,7 +11,9 @@ import { CoreModule } from "../core/core.module";
       AppRoutingModule,
       CoreModule
     ],
-    exports: [SecaoAdministrativaComponent],
+    exports: [
+      SecaoAdministrativaComponent
+    ],
     bootstrap: []
   })
   export class FeatureModule { }

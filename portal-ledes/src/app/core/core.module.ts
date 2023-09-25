@@ -1,16 +1,22 @@
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "../app-routing.module";
 import { CardComponent } from "./components/card/card.component";
+import { NavComponent } from './components/nav/nav.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
     declarations: [
-        CardComponent
+        CardComponent,
+        NavComponent
     ],
     imports: [
-      AppRoutingModule
+      AppRoutingModule,
+      MatToolbarModule
     ],
     exports: [
-        CardComponent
+        CardComponent,
+        NavComponent
     ]
   })
   export class CoreModule { }
