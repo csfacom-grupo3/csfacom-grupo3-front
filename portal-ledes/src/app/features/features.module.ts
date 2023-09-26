@@ -1,18 +1,27 @@
 import { NgModule } from "@angular/core";
-import { AppRoutingModule } from "../app-routing.module";
-import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";
 import { CoreModule } from "../core/core.module";
+import { AppRoutingModule } from "../app-routing.module";
+
+import {MatCardModule} from '@angular/material/card';
+
+import { LoginComponent } from './admin/login/login.component';
+import { NavComponent } from '../core/components/nav/nav.component';
+import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";
 
 @NgModule({
     declarations: [
-      SecaoAdministrativaComponent
+      SecaoAdministrativaComponent,
+      LoginComponent
     ],
     imports: [
       AppRoutingModule,
-      CoreModule
+      CoreModule,
+      MatCardModule
     ],
     exports: [
-      SecaoAdministrativaComponent
+      SecaoAdministrativaComponent,
+      NavComponent,
+      LoginComponent
     ],
     bootstrap: []
   })
