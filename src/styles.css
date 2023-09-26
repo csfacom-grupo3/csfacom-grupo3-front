@@ -15,6 +15,22 @@
     .borda-opaca{
         @apply border-solid border-2
     }
+
+    .botao{
+        @apply text-white w-40 h-14 rounded-md
+    }
+
+    .botao-azul{
+        @apply botao bg-azul
+    }
+
+    .botao-verde{
+        @apply botao bg-verde
+    }
+
+    .botao-vermelho{
+        @apply botao bg-vermelho
+    }
 }
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
