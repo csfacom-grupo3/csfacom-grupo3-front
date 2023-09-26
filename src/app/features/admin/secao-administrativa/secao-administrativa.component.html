@@ -6,27 +6,29 @@
     <div class="w-9/12 max-sm:w-full">
         <div class="flex flex-row justify-evenly max-sm:flex-col">
             <app-card 
-                [img]="cards[0].Icon" 
-                [name]="cards[0].Nome"
-                (click)="abrirModal()"></app-card>
+                img="../../../../assets/icons/engrenagens.svg" 
+                name="Projetos"
+                (click)="abrirModal(0)"></app-card>
             
             <app-card 
-                [img]="cards[1].Icon" 
-                [name]="cards[1].Nome"></app-card>
+                img="../../../../assets/icons/user.svg" 
+                name="Usuários"
+                (click)="abrirModal(1)"></app-card>
             
             <app-card 
-                [img]="cards[2].Icon" 
-                [name]="cards[2].Nome"></app-card>
+                img="../../../../assets/icons/noticia.svg" 
+                name="Notícias"
+                (click)="abrirModal(2)"></app-card>
         </div>
 
         <div class="flex flex-row justify-evenly max-sm:flex-col">
             <app-card 
-                [img]="cards[3].Icon" 
-                [name]="cards[3].Nome"></app-card>
+                img="../../../../assets/icons/contatos.svg" 
+                name="Contatos"></app-card>
 
             <app-card 
-                [img]="cards[4].Icon" 
-                [name]="cards[4].Nome"></app-card>
+                img="../../../../assets/icons/sobre-nos.svg" 
+                name="Sobre nós"></app-card>
         </div>    
     </div>    
 

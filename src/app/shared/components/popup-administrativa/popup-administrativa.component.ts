@@ -16,5 +16,8 @@ export class PopupAdministrativaComponent {
   ) {
     this.nomeBotoes = data;
   }
+
+  fechar(){
+    this.dialogRef.close();
+  }
 }
- 
