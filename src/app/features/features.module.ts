@@ -7,6 +7,8 @@ import { ListarProjetosComponent } from "./admin/projetos/listar-projetos/listar
 import { NovoProjetoComponent } from "./admin/projetos/novo-projeto/novo-projeto.component";
 import { LoginComponent } from "./admin/login/login.component";
 import { MatCardModule } from '@angular/material/card';
+import { NovoUsuarioComponent } from './admin/usuarios/novo-usuario/novo-usuario.component';
+import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar-usuarios.component';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { MatCardModule } from '@angular/material/card';
       SecaoAdministrativaComponent,
       ListarProjetosComponent,
       NovoProjetoComponent,
-      LoginComponent
+      LoginComponent,
+      NovoUsuarioComponent,
+      ListarUsuariosComponent
     ],
     imports: [
       AppRoutingModule,

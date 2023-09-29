@@ -12,7 +12,11 @@
         @apply text-4xl text-[#0099CB] max-sm:text-2xl
     }
 
-    .borda-opaca{
+    .borda-opaca-sm{
+        @apply border-solid border
+    }
+
+    .borda-opaca-md{
         @apply border-solid border-2
     }
 
@@ -31,6 +35,8 @@
     .botao-vermelho{
         @apply botao bg-vermelho
     }
-}
 
-html, body { height: 100%; }
+    .input{
+        @apply w-2/4 h-10 rounded-md m-2 focus:outline-none borda-opaca-sm shadow-md border-[#979797]
+    }
+}
