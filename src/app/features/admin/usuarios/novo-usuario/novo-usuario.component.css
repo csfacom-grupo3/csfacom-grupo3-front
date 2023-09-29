@@ -1,0 +1,34 @@
+.usuario-icon{
+    background-image: url("../../../../../assets/icons/novo-usuario/name-user.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    padding-right: 30px;
+}
+
+.email-icon{
+    background-image: url("../../../../../assets/icons/novo-usuario/email.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    padding-right: 30px;
+}
+
+.linkedin-icon{
+    background-image: url("../../../../../assets/icons/novo-usuario/linkedin.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    padding-right: 30px;
+}
+
+.github-icon{
+    background-image: url("../../../../../assets/icons/novo-usuario/github.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    padding-right: 30px;
+}
+
+.senha-icon{
+    background-image: url("../../../../../assets/icons/novo-usuario/senha.svg");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 10px) center;
+    padding-right: 30px;
+}
