@@ -1,0 +1,34 @@
+@tailwind components;
+
+@layer components{
+    .icon{
+        background-repeat: no-repeat;
+        background-position: calc(100% - 10px) center;
+        padding-right: 30px;
+    }
+
+    .icon-usuario{
+        background-image: url("novo-usuario/name-user.svg");
+        @apply icon 
+    }
+    .icon-email{
+        background-image: url("novo-usuario/email.svg");
+        @apply icon 
+    }
+    
+    .icon-linkedin{
+        background-image: url("novo-usuario/linkedin.svg");
+        @apply icon 
+    }
+    
+    .icon-github{
+        background-image: url("novo-usuario/github.svg");
+        @apply icon 
+    }
+    
+    .icon-senha{
+        background-image: url("novo-usuario/senha.svg");
+        @apply icon 
+    }
+}
+
