@@ -9,6 +9,7 @@ import { LoginComponent } from "./admin/login/login.component";
 import { MatCardModule } from '@angular/material/card';
 import { NovoUsuarioComponent } from './admin/usuarios/novo-usuario/novo-usuario.component';
 import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar-usuarios.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar
     ],
     imports: [
       AppRoutingModule,
-      CoreModule,
+      CoreModule,      
+      ReactiveFormsModule,
       AdminRoutingModule,
       MatCardModule
     ],
