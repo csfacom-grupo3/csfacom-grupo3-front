@@ -6,7 +6,23 @@
         <form
             class="center flex-col w-full">
 
-            <img src="../../../../../assets/icons/add-user.svg" alt="Icone para adicionar usuário">
+            <div class="custom-file-input">
+                <label
+                    class="center flex-col"
+                    for="file-upload">
+                    <img
+                        class="cursor-pointer w-36"
+                        [src]="imagem" 
+                        alt="Icone para adicionar usuário">
+                    <span class="m2">{{ nomeArquivo }}</span>
+                </label>
+
+                <input
+                    class="opacity-0"
+                    (change)="checkArquivo($event)"
+                    type="file" 
+                    id="file-upload">
+            </div>
 
             <input
                 class="icon-usuario input"
