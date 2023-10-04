@@ -3,7 +3,7 @@
 @layer components{
     .icon{
         background-repeat: no-repeat;
-        background-position: calc(100% - 10px) center;
+        background-position: calc(100% - 15px) center;
         padding-right: 30px;
     }
 

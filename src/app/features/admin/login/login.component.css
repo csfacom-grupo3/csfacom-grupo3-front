@@ -1,11 +1,42 @@
 .login{
+  display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 60rem;
-  height: 40rem;
-  background-color: #E6F5FA;
   margin-top: 5%;
-  margin-left: 25%;
-  
 }
 
+.login .cardlogin{
+  width: 60rem;
+  height: 35rem;
+  background-color: #E6F5FA;
+  box-shadow: .05px 0.5px 10px 0.5px #9c9c9c;
+  align-items: center;
+}
+
+.login .titulo{
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+.login .inputlogin{
+  padding: 15px;
+  box-shadow: 0.2px 2px 3px 1px #aaaaaa;
+  margin-top: 2rem;
+}
+
+.login .botaologin{
+  font-size: large;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 4rem;
+}
+
+.login .link{
+  margin-top: 1.5rem;
+  color: #0099CB;
+  font-family: 'Poppins', sans-serif;
+}
