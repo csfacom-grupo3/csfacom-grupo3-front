@@ -4,6 +4,7 @@
     class="w-9/12 bg-azul-10 rounded-2xl borda-opaca-md center flex-col">
         <h1 class="center m-4"><strong>Cadastrar usuário do sistema</strong></h1>
         <form
+            [formGroup]="formClient"
             class="center flex-col w-full">
 
             <div class="custom-file-input">
@@ -18,6 +19,7 @@
                 </label>
 
                 <input
+                    formControlName="foto"
                     class="opacity-0"
                     (change)="checkArquivo($event)"
                     type="file" 
@@ -25,31 +27,37 @@
             </div>
 
             <input
+                formControlName="nome"
                 class="icon-usuario input"
                 type="text"
                 placeholder="Nome completo">
 
             <input
+                formControlName="email"
                 class="icon-email input" 
                 type="text"
                 placeholder="E-mail">
 
             <input
+                formControlName="linkedin"
                 class="icon-linkedin input" 
                 type="text"
                 placeholder="Linkedin">
 
             <input
+                formControlName="github"
                 class="icon-github input" 
                 type="text"
                 placeholder="Github">
 
             <input
+                formControlName="senha"
                 class="icon-senha input" 
                 type="password"
                 placeholder="Senha">
 
             <input
+                formControlName="confirmaSenha"
                 class="icon-senha input" 
                 type="password"
                 placeholder="Repetir a senha">
@@ -63,6 +71,7 @@
 
         <button 
             class="botao-azul m-2"
+            (click)="gravar()"
             >Cadastrar</button>
     </main>
 
