@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
-
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FeatureModule } from './features/features.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { PopupAdministrativaComponent } from './shared/components/popup-administrativa/popup-administrativa.component';
+
+
+import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
+import { FeatureModule } from './features/features.module';
+import { PopupAdministrativaComponent } from './shared/components/popup-administrativa/popup-administrativa.component';
 
 @NgModule({
   declarations: [

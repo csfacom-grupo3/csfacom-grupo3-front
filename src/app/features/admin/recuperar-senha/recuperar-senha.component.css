@@ -1,0 +1,36 @@
+.recuperarsenha{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.recuperarsenha .cardsenha{
+  width: 60rem;
+  height: 35rem;
+  background-color: #E6F5FA;
+  box-shadow: .05px 0.5px 10px 0.5px #9c9c9c;
+  align-items: center;
+}
+
+.recuperarsenha .titulo{
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+.recuperarsenha .inputlogin{
+  padding: 15px;
+  box-shadow: 0.2px 2px 3px 1px #aaaaaa;
+  margin-top: 4rem;
+}
+
+.recuperarsenha .botaoenviar{
+  font-size: large;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 6rem;
+}

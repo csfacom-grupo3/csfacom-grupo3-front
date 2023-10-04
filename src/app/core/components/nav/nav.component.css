@@ -1,13 +1,13 @@
 .navbar{
-  display: flex;
   align-items: center;
+  justify-content: space-around;
   background-color: #0099CB;
   color:#fff
 }
 
 .navbar .logo{
   max-width: 12%;
-  margin-left: 8rem;
+  margin-left: 5rem;
 }
 
 .navbar .login{
@@ -15,5 +15,6 @@
 }
 
 .navbar a{
-  margin-left: 50px;
+  margin-left: 5rem;
+  font-weight: bold;
 }
