@@ -1,1 +1,78 @@
-<p>novo-projeto works!</p>
+<div
+    class="w-full h-full flex justify-center items-center m-4">
+    <main
+    class="w-9/12 bg-azul-10 rounded-2xl borda-opaca-md center flex-col">
+        <h1 class="center m-4"><strong>Cadastrar novo projeto</strong></h1>
+        <form
+            [formGroup]="formClient"
+            class="center flex-col w-full">
+
+            <div class="custom-file-input">
+                <label
+                    class="center flex-col"
+                    for="file-upload">
+                    <img
+                        class="cursor-pointer w-36"
+                        [src]="imagem" 
+                        alt="Icone para adicionar usuário">
+                    <span class="m2">{{ nomeArquivo }}</span>
+                </label>
+
+                <input
+                    formControlName="foto"
+                    class="opacity-0"
+                    (change)="checkArquivo($event)"
+                    type="file" 
+                    id="file-upload">
+            </div>
+
+            <input
+              formControlName="nome"
+              class="inputs icon-engrenagem input"
+              type="text"
+              placeholder="Nome do projeto"
+            >
+
+            <input
+              formControlName="data"
+              class="inputs icon-calendario input" 
+              type="data"
+              placeholder="Data inicio"
+            >
+
+            <input
+              formControlName="senha"
+              class="inputs icon-calendario input" 
+              type="data"
+              placeholder="Data fim"
+            >
+
+            <select
+                class="input">
+                <option>Selecione o status do projeto</option>
+                <option>2</option>
+            </select>
+
+            <select
+                class="input">
+                <option>Selecione o coordenador</option>
+                <option>2</option>
+            </select>
+        </form>
+
+        <button class="botaoCad botao-azul m-2">
+          Adicionar membros
+        </button>
+
+        <div class="botoes">
+          <button class=" botao-vermelho m-2">
+            Voltar
+          </button>
+  
+          <button class=" botao-verde m-2">
+            Salvar
+          </button>
+        </div>
+    </main>
+
+</div>

@@ -1,0 +1,19 @@
+.inputs{
+  padding: 15px;
+  box-shadow: 0.2px 2px 3px 1px #aaaaaa;
+  margin-top: 1rem;
+}
+
+.botaoCad{
+  font-size: large;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 2rem;
+  
+}
+
+.botoes{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
