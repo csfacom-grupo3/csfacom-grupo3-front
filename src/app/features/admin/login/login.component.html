@@ -1,22 +1,27 @@
 <div class="login">
   <mat-card class="cardlogin">
     <h1 class="titulo">LOGIN</h1>
+    
+    <form
+      [formGroup]="formClient">
 
-    <input
+      <input
       class="inputlogin icon-usuario input"
       type="text"
       placeholder="Usuário"
-    >
+      formControlName="email">
 
-    <input
-      class="inputlogin icon-senha input" 
-      type="password"
-      placeholder="Senha"
-    >
+      <input
+        class="inputlogin icon-senha input" 
+        type="password"
+        placeholder="Senha"
+        formControlName="password">
+    </form>
 
-    <button class="botaologin botao-azul m-2">
-      Entrar
-    </button>
+    <button 
+      class="botaologin botao-azul m-2"
+      (click)="logar()">
+      Entrar </button>
 
     <a class="link" routerLink="/recuperarsenha">Esqueceu a senha? Clique aqui</a>
     

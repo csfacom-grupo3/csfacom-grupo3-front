@@ -13,6 +13,7 @@ import { RecuperarSenhaComponent } from './admin/recuperar-senha/recuperar-senha
 import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar-usuarios.component';
 import { ListarProjetosComponent } from "./admin/projetos/listar-projetos/listar-projetos.component";
 import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao
       AppRoutingModule,
       CoreModule,      
       ReactiveFormsModule,
+      HttpClientModule,
       AdminRoutingModule,
       MatCardModule
     ],
