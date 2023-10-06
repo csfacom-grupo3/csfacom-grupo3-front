@@ -25,7 +25,14 @@
     }
 
     .botao-azul{
+        font-size: large;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
         @apply botao bg-azul
+    }
+
+    .botao-azul:hover{
+        background-color: #13bff8;
     }
 
     .botao-verde{
