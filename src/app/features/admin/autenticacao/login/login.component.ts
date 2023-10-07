@@ -19,8 +19,13 @@ export class LoginComponent {
     const dataForm = this.formClient.value;
 
     this.apiService.post("users/sign_in", dataForm)
-      .subscribe((data: any[]) => {
-        console.log(data);
-    });
+      .subscribe(
+          (data: any[]) => {
+            console.log(data);
+        },
+        (error : any) =>{
+          console.log(error)
+        }
+      );
   }  
 }

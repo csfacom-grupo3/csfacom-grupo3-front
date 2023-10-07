@@ -5,11 +5,11 @@ import { AppRoutingModule } from "../app-routing.module";
 
 import { MatCardModule } from '@angular/material/card';
 
-import { LoginComponent } from "./admin/login/login.component";
+import { LoginComponent } from "./admin/autenticacao/login/login.component";
 import { AdminRoutingModule } from "./admin/admin-routing.module";
 import { NovoProjetoComponent } from "./admin/projetos/novo-projeto/novo-projeto.component";
 import { NovoUsuarioComponent } from './admin/usuarios/novo-usuario/novo-usuario.component';
-import { RecuperarSenhaComponent } from './admin/recuperar-senha/recuperar-senha.component';
+import { RecuperarSenhaComponent } from './admin/autenticacao/recuperar-senha/recuperar-senha.component';
 import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar-usuarios.component';
 import { ListarProjetosComponent } from "./admin/projetos/listar-projetos/listar-projetos.component";
 import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";

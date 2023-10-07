@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { LoginComponent } from './features/admin/login/login.component';
-import { RecuperarSenhaComponent } from './features/admin/recuperar-senha/recuperar-senha.component';
+import { LoginComponent } from './features/admin/autenticacao/login/login.component';
+import { RecuperarSenhaComponent } from './features/admin/autenticacao/recuperar-senha/recuperar-senha.component';
 
 const routes: Routes = [
   {    
