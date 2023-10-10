@@ -19,6 +19,10 @@
         formControlName="password">
     </form>
 
+    <div *ngIf="falhaLogin">
+      <span>Usuário ou senha incorretos</span>
+    </div>
+
     <button 
       class="botaologin botao-azul m-2"
       (click)="logar()">

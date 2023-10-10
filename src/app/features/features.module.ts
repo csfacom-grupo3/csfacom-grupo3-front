@@ -14,6 +14,7 @@ import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar
 import { ListarProjetosComponent } from "./admin/projetos/listar-projetos/listar-projetos.component";
 import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";
 import { HttpClientModule } from "@angular/common/http";
+import { CommonModule } from "@angular/common";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { HttpClientModule } from "@angular/common/http";
       CoreModule,      
       ReactiveFormsModule,
       HttpClientModule,
+      CommonModule,
       AdminRoutingModule,
       MatCardModule
     ],
