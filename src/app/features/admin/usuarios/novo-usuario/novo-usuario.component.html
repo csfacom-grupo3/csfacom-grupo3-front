@@ -73,6 +73,8 @@
             class="botaoCad botao-azul m-2"
             (click)="gravar()"
             >Cadastrar</button>
+
+        <p *ngIf="erroAoGravar"> {{ erro }} </p>
     </main>
 
 </div>

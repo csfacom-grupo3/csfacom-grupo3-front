@@ -12,6 +12,8 @@ export class NovoUsuarioComponent {
 
   nomeArquivo! : string;
   imagem : string = "../../../../../assets/icons/add-user.svg";
+  erroAoGravar : boolean = false;
+  erro! : string;
 
   formClient : FormGroup = new FormGroup({
     foto: new FormControl(),
@@ -44,7 +46,8 @@ export class NovoUsuarioComponent {
         console.log(data);
       },
       error: (erro)=>{
-        console.log(erro);
+        this.erroAoGravar = true;
+        this.erro = erro.error.errors[0];
       }
     });
    }
