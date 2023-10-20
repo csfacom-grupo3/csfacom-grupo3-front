@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ApiService } from 'src/app/core/service/Api.Service';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -7,17 +8,19 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./novo-usuario.component.css']
 })
 export class NovoUsuarioComponent {
+  constructor(private _apiService: ApiService) { }
+
   nomeArquivo! : string;
   imagem : string = "../../../../../assets/icons/add-user.svg";
 
   formClient : FormGroup = new FormGroup({
     foto: new FormControl(),
-    nome: new FormControl(),
+    name: new FormControl(),
     email: new FormControl(),
     linkedin: new FormControl(),
     github: new FormControl(),
-    senha: new FormControl(),
-    confirmaSenha: new FormControl(),
+    password: new FormControl(),
+    password_confirmation: new FormControl(),
   });
 
   checkArquivo(event : any){
@@ -33,6 +36,16 @@ export class NovoUsuarioComponent {
    }
 
    gravar(){
-    
+    const dataForm = this.formClient.value;
+
+    this._apiService.post("users", dataForm)
+    .subscribe({
+      next: (data) => {       
+        console.log(data);
+      },
+      error: (erro)=>{
+        console.log(erro);
+      }
+    });
    }
 }

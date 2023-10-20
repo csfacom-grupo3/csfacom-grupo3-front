@@ -5,13 +5,34 @@ import { ListarProjetosComponent } from './projetos/listar-projetos/listar-proje
 import { NovoProjetoComponent } from './projetos/novo-projeto/novo-projeto.component';
 import { ListarUsuariosComponent } from './usuarios/listar-usuarios/listar-usuarios.component';
 import { NovoUsuarioComponent } from './usuarios/novo-usuario/novo-usuario.component';
+import { authGuard } from '../../core/service/guard/auth.guard';
 
 const routes: Routes = [
-  {path : 'secao-administrativa', component : SecaoAdministrativaComponent},
-  {path : 'secao-administrativa/listar-projetos', component : ListarProjetosComponent},
-  {path: 'secao-administrativa/novo-projeto', component: NovoProjetoComponent},
-  {path: 'secao-administrativa/listar-usuarios', component: ListarUsuariosComponent},
-  {path: 'secao-administrativa/novo-usuario', component: NovoUsuarioComponent}
+  {
+    path: 'secao-administrativa', 
+    component: SecaoAdministrativaComponent,
+    canActivate : [authGuard]
+  },
+  {
+    path: 'secao-administrativa/listar-projetos', 
+    component: ListarProjetosComponent,
+    canActivate : [authGuard]
+  },
+  {
+    path: 'secao-administrativa/novo-projeto', 
+    component: NovoProjetoComponent,
+    canActivate : [authGuard]
+  },
+  {
+    path: 'secao-administrativa/listar-usuarios', 
+    component: ListarUsuariosComponent,
+    canActivate : [authGuard]
+  },
+  {
+    path: 'secao-administrativa/novo-usuario', 
+    component: NovoUsuarioComponent,
+    canActivate : [authGuard]
+  }
 ];
 
 @NgModule({

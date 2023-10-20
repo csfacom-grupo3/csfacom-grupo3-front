@@ -1,0 +1,36 @@
+<div class="login">
+  <mat-card class="cardlogin">
+    <h1 class="titulo">LOGIN</h1>
+    
+    <form 
+      class="center flex-col w-full"
+      [formGroup]="formClient">
+
+      <input
+      class="inputlogin icon-usuario input"
+      type="text"
+      placeholder="Usuário"
+      formControlName="email">
+
+      <input
+        class="inputlogin icon-senha input" 
+        type="password"
+        placeholder="Senha"
+        formControlName="password">
+    </form>
+
+    <div *ngIf="falhaLogin">
+      <span>Usuário ou senha incorretos</span>
+    </div>
+
+    <button 
+      class="botaologin botao-azul m-2"
+      (click)="logar()">
+      Entrar </button>
+
+    <a class="link" routerLink="/recuperar-senha">Esqueceu a senha? Clique aqui</a>
+    
+
+  </mat-card>
+
+</div>
