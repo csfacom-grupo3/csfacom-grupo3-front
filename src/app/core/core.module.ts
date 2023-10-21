@@ -4,11 +4,13 @@ import { CardComponent } from "./components/card/card.component";
 import { NavComponent } from './components/nav/nav.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { CardCarrosselComponent } from './components/card-carrossel/card-carrossel.component';
 
 @NgModule({
     declarations: [
         CardComponent,
-        NavComponent
+        NavComponent,
+        CardCarrosselComponent
     ],
     imports: [
       AppRoutingModule,
@@ -16,7 +18,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     ],
     exports: [
         CardComponent,
-        NavComponent
+        NavComponent,
+        CardCarrosselComponent
     ]
   })
   export class CoreModule { }

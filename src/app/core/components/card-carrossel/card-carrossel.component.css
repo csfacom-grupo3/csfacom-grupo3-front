@@ -1,0 +1,13 @@
+.card{
+  height: 340px;
+  width: 490px;
+}
+
+.card .nome-projeto{
+  display: block;
+  background-color: #EAEAEA;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  text-align: center;
+}
