@@ -15,6 +15,7 @@ import { ListarProjetosComponent } from "./admin/projetos/listar-projetos/listar
 import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
+import { HomeComponent } from './public/home/home.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CommonModule } from "@angular/common";
       LoginComponent,
       NovoUsuarioComponent,
       ListarUsuariosComponent,
-      RecuperarSenhaComponent
+      RecuperarSenhaComponent,
+      HomeComponent
     ],
     imports: [
       AppRoutingModule,
