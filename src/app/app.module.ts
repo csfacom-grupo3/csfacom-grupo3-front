@@ -10,11 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { FeatureModule } from './features/features.module';
 import { PopupAdministrativaComponent } from './shared/components/popup-administrativa/popup-administrativa.component';
 import { InterceptorModule } from './core/service/interceptor/interceptor.module';
+import { SucessoAdicaoComponent } from './shared/components/sucesso-adicao/sucesso-adicao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PopupAdministrativaComponent
+    PopupAdministrativaComponent,
+    SucessoAdicaoComponent
   ],
   imports: [
     BrowserModule,

@@ -63,9 +63,14 @@
                 placeholder="Repetir a senha">
 
             <select
+                formControlName="academic_bond_id"
                 class="input">
-                <option>1</option>
-                <option>2</option>
+                <option value="0">Selecione o tipo de vinculo</option>
+                <option 
+                    *ngFor="let vinculo of vinculos"
+                    [value]="vinculo.id">
+                    {{ vinculo.bond_kind }}
+                </option>
             </select>
         </form>
 
@@ -74,7 +79,7 @@
             (click)="gravar()"
             >Cadastrar</button>
 
-        <p *ngIf="erroAoGravar"> {{ erro }} </p>
+        <p *ngFor="let erro of erros"> {{ erro }} </p>
     </main>
 
 </div>
