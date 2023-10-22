@@ -4,13 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './features/public/home/home.component';
 import { LoginComponent } from './features/admin/autenticacao/login/login.component';
 import { RecuperarSenhaComponent } from './features/admin/autenticacao/recuperar-senha/recuperar-senha.component';
-import { areLogged } from './core/service/guard/auth.guard';
+import { isLogged } from './core/service/guard/auth.guard';
 
 const routes: Routes = [
   {    
     path : 'login', 
     component: LoginComponent,
-    canActivate : [areLogged]
+    canActivate : [isLogged]
   },
   {
     path : '',
@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path:'recuperar-senha',
     component: RecuperarSenhaComponent,
-    canActivate : [areLogged]
+    canActivate : [isLogged]
   },
   {
     path:'home',

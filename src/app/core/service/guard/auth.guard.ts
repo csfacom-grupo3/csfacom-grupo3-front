@@ -13,7 +13,7 @@ export const authGuard = () => {
   return router.parseUrl('/login');
 };
 
-export const areLogged = () => {
+export const isLogged = () => {
   const router = inject(Router);
   const auth = inject(AuthService);
 
