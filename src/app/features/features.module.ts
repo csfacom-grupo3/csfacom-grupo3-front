@@ -18,6 +18,7 @@ import { CommonModule } from "@angular/common";
 import { HomeComponent } from './public/home/home.component';
 
 
+
 @NgModule({
     declarations: [
       SecaoAdministrativaComponent,

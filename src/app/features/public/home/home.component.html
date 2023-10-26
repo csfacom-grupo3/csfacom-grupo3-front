@@ -1,2 +1,39 @@
+<app-carrossel></app-carrossel>
 <h1 class="titulo" >NOSSOS PROJETOS</h1>
 <app-card-carrossel></app-card-carrossel>
+<h1 class="titulo" >CONHEÇA O LEDES</h1>
+<nav class="center">
+  <div class="w-9/12 max-sm:w-full">
+      <div class="flex flex-row justify-evenly max-sm:flex-col">
+          <app-card 
+            img="../../../../assets/icons/engrenagens.svg" 
+            name="Projetos">
+          </app-card>
+          
+          <app-card 
+            img="../../../../assets/icons/sobre-nos.svg" 
+            name="Sobre nós">
+          </app-card>
+          
+          <app-card 
+              img="../../../../assets/icons/users.svg" 
+              name="Membros"
+              (click)="abrirModal()">
+            </app-card>
+      </div>
+
+      <div class="flex flex-row justify-evenly max-sm:flex-col">
+        <app-card 
+          img="../../../../assets/icons/noticia.svg" 
+          name="Notícias">
+        </app-card>
+
+          <app-card 
+              img="../../../../assets/icons/contatos.svg" 
+              name="Contatos"></app-card>
+      </div>    
+  </div>    
+
+</nav>
+
+<app-footer></app-footer>

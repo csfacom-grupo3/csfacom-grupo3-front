@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { FeatureModule } from './features/features.module';
 import { PopupAdministrativaComponent } from './shared/components/popup-administrativa/popup-administrativa.component';
 import { InterceptorModule } from './core/service/interceptor/interceptor.module';
-
 @NgModule({
   declarations: [
     AppComponent,
