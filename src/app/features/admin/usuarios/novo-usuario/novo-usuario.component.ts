@@ -1,17 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/core/service/Api.Service';
+import { SucessoAdicaoComponent } from 'src/app/shared/components/sucesso-adicao/sucesso-adicao.component';
 
 @Component({
   selector: 'app-novo-usuario',
   templateUrl: './novo-usuario.component.html',
   styleUrls: ['./novo-usuario.component.css']
 })
-export class NovoUsuarioComponent {
-  constructor(private _apiService: ApiService) { }
+export class NovoUsuarioComponent implements OnInit{
+  constructor(private _apiService: ApiService,
+              public dialog: MatDialog          
+  ) { }
 
+  vinculos! : any[];
   nomeArquivo! : string;
   imagem : string = "../../../../../assets/icons/add-user.svg";
+  erroAoGravar : boolean = false;
+  erros! : string;
 
   formClient : FormGroup = new FormGroup({
     foto: new FormControl(),
@@ -21,7 +28,20 @@ export class NovoUsuarioComponent {
     github: new FormControl(),
     password: new FormControl(),
     password_confirmation: new FormControl(),
+    academic_bond_id: new FormControl(0),
   });
+
+  ngOnInit(): void {
+    this._apiService.get('academic_bonds')
+      .subscribe({
+        next: (data) =>{
+          this.vinculos = data;
+        },
+        error: (erro) => {
+          console.log(erro);
+        }
+      })
+  }
 
   checkArquivo(event : any){
     if(event.target.files[0].type == "image/jpeg"){
@@ -40,12 +60,23 @@ export class NovoUsuarioComponent {
 
     this._apiService.post("users", dataForm)
     .subscribe({
-      next: (data) => {       
-        console.log(data);
+      next: (data) => {   
+        this.formClient.reset({
+          academic_bond_id: 0
+        });
+        this.abrirModal();
       },
       error: (erro)=>{
-        console.log(erro);
+        this.erroAoGravar = true;
+        this.erros = erro.error.errors;
       }
     });
    }
+
+   abrirModal(){
+    this.dialog.open(SucessoAdicaoComponent, {
+      height: '35%',
+      width: '50%',
+    });
+  }
 }
