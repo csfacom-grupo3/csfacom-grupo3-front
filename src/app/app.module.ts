@@ -10,8 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { FeatureModule } from './features/features.module';
 import { PopupAdministrativaComponent } from './shared/components/popup-administrativa/popup-administrativa.component';
 import { InterceptorModule } from './core/service/interceptor/interceptor.module';
+<<<<<<< HEAD
+=======
 import { SucessoAdicaoComponent } from './shared/components/sucesso-adicao/sucesso-adicao.component';
 
+>>>>>>> 4f6fde1a8b552f19a8be6118c93d5165266e7a44
 @NgModule({
   declarations: [
     AppComponent,

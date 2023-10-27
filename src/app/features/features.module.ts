@@ -19,6 +19,7 @@ import { HomeComponent } from './public/home/home.component';
 import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo.component';
 
 
+
 @NgModule({
     declarations: [
       SecaoAdministrativaComponent,

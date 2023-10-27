@@ -1,0 +1,18 @@
+<c-carousel [interval]="0">
+  <c-carousel-inner>
+    <c-carousel-item *ngFor="let slide of slides">
+      <c-carousel-control [routerLink] caption="Previous" direction="prev">
+        <img class="icones" src="../../../../assets/icons/seta-esquerda.svg" alt="">
+      </c-carousel-control>
+      <img
+        [src]="slide.src"
+        alt="{{slide.title}}"
+        class="d-block w-100"
+        loading="lazy"
+      />
+      <c-carousel-control [routerLink] caption="Next" direction="next">
+        <img class="icones" src="../../../../assets/icons/seta-direita.svg" alt="">
+      </c-carousel-control>
+    </c-carousel-item>
+  </c-carousel-inner>
+</c-carousel>
