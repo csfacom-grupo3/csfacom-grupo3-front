@@ -16,6 +16,7 @@ import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from './public/home/home.component';
+import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { HomeComponent } from './public/home/home.component';
       NovoUsuarioComponent,
       ListarUsuariosComponent,
       RecuperarSenhaComponent,
-      HomeComponent
+      HomeComponent,
+      NovoVinculoComponent
     ],
     imports: [
       AppRoutingModule,
@@ -36,7 +38,7 @@ import { HomeComponent } from './public/home/home.component';
       HttpClientModule,
       CommonModule,
       AdminRoutingModule,
-      MatCardModule
+      MatCardModule,
     ],
     exports: [SecaoAdministrativaComponent],
     bootstrap: []

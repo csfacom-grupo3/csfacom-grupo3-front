@@ -1,0 +1,34 @@
+<dialog
+    open
+    class="w-full h-full">
+    <div
+        class="center mt-8 mb-8">
+        <h1 class="titulo" >ADIÇÃO FEITA COM SUCESSO</h1>
+    </div>
+
+    <hr>
+
+    <div
+        class="center">
+        <input 
+            #nome
+            class="input p-2"
+            placeholder="Nome do vinculo"
+            type="text">
+    </div>
+
+    <div
+        class="center">
+        <button
+            (click)="salvar(nome.value)"
+            class="botao-verde m-2">
+                Salvar
+        </button>
+
+        <button
+            (click)="fechar()"
+            class="botao-vermelho m-2">
+             Voltar
+        </button>
+    </div>
+</dialog>

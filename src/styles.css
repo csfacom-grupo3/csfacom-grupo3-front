@@ -21,7 +21,7 @@
     }
 
     .botao{
-        @apply text-white w-40 h-14 rounded-md
+        @apply text-white w-40 h-10 rounded-md
     }
 
     .botao-azul{
