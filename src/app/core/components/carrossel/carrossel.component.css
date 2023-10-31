@@ -1,3 +1,18 @@
-.icones {
-  position: absolute;
+.carousel-wrap{
+  position: relative;
+}
+
+.controles{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 95%;
+}
+
+.icones{
+  position:absolute;
+  z-index:1;
+  top:50%;
+  width:60px;               
+  height:30px;             
+  margin:-15px 0 0 -30px;
 }
