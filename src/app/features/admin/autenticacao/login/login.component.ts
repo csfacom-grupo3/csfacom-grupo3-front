@@ -12,6 +12,7 @@ import { Auth } from 'src/app/shared/class/auth';
 })
 export class LoginComponent {
   falhaLogin : boolean = false;
+  loader : boolean = false;
 
   constructor(private _apiService: ApiService,
               private _router: Router,
@@ -24,7 +25,9 @@ export class LoginComponent {
   
   logar(){
     const dataForm = this.formClient.value;
+    this.loader = true;
 
+    
     this._apiService.post("users/sign_in", dataForm)
       .subscribe({
         next: (data) => {

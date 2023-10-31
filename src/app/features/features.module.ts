@@ -17,6 +17,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from './public/home/home.component';
 import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo.component';
+import { LoaderComponent } from "../shared/components/loader/loader.component";
 
 
 
@@ -30,7 +31,8 @@ import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo
       ListarUsuariosComponent,
       RecuperarSenhaComponent,
       HomeComponent,
-      NovoVinculoComponent
+      NovoVinculoComponent,
+      LoaderComponent
     ],
     imports: [
       AppRoutingModule,
