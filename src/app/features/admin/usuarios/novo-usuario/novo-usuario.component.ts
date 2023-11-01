@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/core/service/Api.Service';
 import { SucessoAdicaoComponent } from 'src/app/shared/components/sucesso-adicao/sucesso-adicao.component';
 import { NovoVinculoComponent } from '../../vinculos/novo-vinculo/novo-vinculo.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -12,7 +13,8 @@ import { NovoVinculoComponent } from '../../vinculos/novo-vinculo/novo-vinculo.c
 })
 export class NovoUsuarioComponent implements OnInit{
   constructor(private _apiService: ApiService,
-              public dialog: MatDialog          
+              public dialog: MatDialog,
+              private toastr: ToastrService          
   ) { }
 
   vinculos! : any[];
@@ -49,6 +51,7 @@ export class NovoUsuarioComponent implements OnInit{
    }
 
    gravar(){
+    this.toastr.success('mensagem', 'titulo')
     const dataForm = this.formClient.value;
 
     this._apiService.post("users", dataForm)

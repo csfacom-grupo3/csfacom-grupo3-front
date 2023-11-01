@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatDialogModule } from '@angular/material/dialog';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -11,7 +11,6 @@ import { FeatureModule } from './features/features.module';
 import { PopupAdministrativaComponent } from './shared/components/popup-administrativa/popup-administrativa.component';
 import { InterceptorModule } from './core/service/interceptor/interceptor.module';
 import { SucessoAdicaoComponent } from './shared/components/sucesso-adicao/sucesso-adicao.component';
-import { LoaderComponent } from './shared/components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
     NoopAnimationsModule,
     MatDialogModule,
     CoreModule,
-    InterceptorModule
+    InterceptorModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

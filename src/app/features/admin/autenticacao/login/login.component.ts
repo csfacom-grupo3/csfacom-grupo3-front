@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/core/service/Api.Service';
 import { AuthService } from 'src/app/core/service/auth/auth.service';
 import { Auth } from 'src/app/shared/class/auth';
@@ -16,7 +17,8 @@ export class LoginComponent {
 
   constructor(private _apiService: ApiService,
               private _router: Router,
-              private _authService: AuthService) { }
+              private _authService: AuthService,
+              private toastr: ToastrService) { }
 
   formClient : FormGroup = new FormGroup({
     email: new FormControl(),

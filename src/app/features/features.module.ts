@@ -18,6 +18,8 @@ import { CommonModule } from "@angular/common";
 import { HomeComponent } from './public/home/home.component';
 import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo.component';
 import { LoaderComponent } from "../shared/components/loader/loader.component";
+import { ToastrModule } from "ngx-toastr";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 
@@ -41,7 +43,12 @@ import { LoaderComponent } from "../shared/components/loader/loader.component";
       HttpClientModule,
       CommonModule,
       AdminRoutingModule,
-      MatCardModule,
+      MatCardModule,    
+      BrowserAnimationsModule,
+      ToastrModule.forRoot({
+        timeOut: 10000,
+        positionClass: 'toast-top-right'             
+      })
     ],
     exports: [SecaoAdministrativaComponent],
     bootstrap: []
