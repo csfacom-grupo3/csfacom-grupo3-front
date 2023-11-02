@@ -20,6 +20,7 @@ import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo
 import { LoaderComponent } from "../shared/components/loader/loader.component";
 import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -45,9 +46,12 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
       AdminRoutingModule,
       MatCardModule,    
       BrowserAnimationsModule,
+      MatFormFieldModule,
       ToastrModule.forRoot({
         timeOut: 10000,
-        positionClass: 'toast-top-right'             
+        positionClass: 'toast-top-right',
+        progressBar: true,
+        closeButton : true          
       })
     ],
     exports: [SecaoAdministrativaComponent],

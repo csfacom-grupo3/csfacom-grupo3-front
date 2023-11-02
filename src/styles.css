@@ -24,6 +24,10 @@
         @apply text-white w-40 h-10 rounded-md
     }
 
+    .botao:disabled{
+        opacity: 50%;
+    }
+
     .botao-azul{
         font-size: large;
         font-family: 'Roboto', sans-serif;

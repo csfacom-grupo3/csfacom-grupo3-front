@@ -1,3 +1,6 @@
+<app-loader
+    *ngIf="loader"></app-loader>
+
 <div
     class="cardUsuario h-full flex justify-center items-center m-4">
     <main
@@ -30,13 +33,20 @@
                 formControlName="name"
                 class="inputs icon-usuario input"
                 type="text"
-                placeholder="Nome completo">
+                placeholder="Nome completo *">
+            <mat-error 
+                *ngIf="formClient.get('name')?.errors?.['required']">Nome é obrigatório</mat-error>
 
             <input
                 formControlName="email"
                 class="inputs icon-email input" 
                 type="text"
-                placeholder="E-mail">
+                placeholder="E-mail *">
+            <mat-error 
+                *ngIf="formClient.get('email')?.errors?.['required']">E-mail é obrigatório</mat-error>
+
+            <mat-error 
+                *ngIf="formClient.get('email')?.errors?.['email']">Insira um e-mail válido</mat-error>
 
             <input
                 formControlName="linkedin"
@@ -54,13 +64,19 @@
                 formControlName="password"
                 class="inputs icon-senha input" 
                 type="password"
-                placeholder="Senha">
+                placeholder="Senha *">
+            <mat-error 
+                *ngIf="formClient.get('password')?.errors?.['required']">Senha é obrigatório</mat-error>
 
             <input
                 formControlName="password_confirmation"
                 class="inputs icon-senha input" 
                 type="password"
-                placeholder="Repetir a senha">
+                placeholder="Repetir a senha *">
+            <mat-error 
+                *ngIf="formClient.get('password_confirmation')?.errors?.['required']">Repetir a senha é obrigatório</mat-error>
+            <mat-error 
+                *ngIf="formClient.get('password_confirmation')?.errors?.['min']">A senha deve ter no minímo 8 caracteres</mat-error>
             
             <div 
                 class="w-2/4 flex ">
@@ -69,7 +85,7 @@
                 formControlName="academic_bond_id"
                 class="input w-full ml-0">
                     <option 
-                        value="0">Selecione o tipo de vinculo</option>
+                        value="0">Selecione o tipo de vinculo *</option>
                     <option 
                         *ngFor="let vinculo of vinculos"
                         [value]="vinculo.id">
@@ -84,13 +100,21 @@
                 </button>
             </div>
     </form>
+    <div>
 
         <button 
-            class="botaoCad botao-azul m-2"
+            class="botaoCad botao-verde m-2"
+            [disabled]="!formClient.valid"
             (click)="gravar()"
             >Cadastrar</button>
+        
+        <button 
+            class="botaoCad botao-vermelho m-2"
+            (click)="voltar()"
+            >Voltar</button>
 
-        <p *ngFor="let erro of erros"> {{ erro }} </p>
+    </div>
+
     </main>
 
 </div>

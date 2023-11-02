@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/core/service/Api.Service';
 import { SucessoAdicaoComponent } from 'src/app/shared/components/sucesso-adicao/sucesso-adicao.component';
@@ -14,27 +14,29 @@ import { ToastrService } from 'ngx-toastr';
 export class NovoUsuarioComponent implements OnInit{
   constructor(private _apiService: ApiService,
               public dialog: MatDialog,
-              private toastr: ToastrService          
+              private toastr: ToastrService,
+              private formBuilder: FormBuilder,          
   ) { }
 
   vinculos! : any[];
   nomeArquivo! : string;
   imagem : string = "../../../../../assets/icons/add-user.svg";
-  erroAoGravar : boolean = false;
-  erros! : string;
+  loader : boolean = false;
 
-  formClient : FormGroup = new FormGroup({
-    foto: new FormControl(),
-    name: new FormControl(),
-    email: new FormControl(),
-    linkedin: new FormControl(),
-    github: new FormControl(),
-    password: new FormControl(),
-    password_confirmation: new FormControl(),
-    academic_bond_id: new FormControl(0),
-  });
+  formClient! : FormGroup;
 
   ngOnInit(): void {
+    this.formClient = this.formBuilder.group({
+      foto: new FormControl(),
+      name: new FormControl(null, [Validators.required]),
+      email: new FormControl(null, [Validators.email, Validators.required]),
+      linkedin: new FormControl(),
+      github: new FormControl(),
+      password: new FormControl(null, [Validators.min(8), Validators.required]),
+      password_confirmation: new FormControl(null, [Validators.min(8), Validators.required]),
+      academic_bond_id: new FormControl(0),
+    });
+
     this.buscarVinculos();
   }
 
@@ -51,8 +53,8 @@ export class NovoUsuarioComponent implements OnInit{
    }
 
    gravar(){
-    this.toastr.success('mensagem', 'titulo')
     const dataForm = this.formClient.value;
+    this.loader = true;
 
     this._apiService.post("users", dataForm)
     .subscribe({
@@ -61,10 +63,13 @@ export class NovoUsuarioComponent implements OnInit{
           academic_bond_id: 0
         });
         this.abrirModal();
+        this.loader = false;
       },
       error: (erro)=>{
-        this.erroAoGravar = true;
-        this.erros = erro.error.errors;
+        erro.error.errors.forEach((element : string) => {
+          this.toastr.warning(element, 'Atenção')
+        });
+        this.loader = false;
       }
     });
    }
@@ -98,5 +103,9 @@ export class NovoUsuarioComponent implements OnInit{
     .subscribe(() => {
       this.buscarVinculos();
     });
+  }
+
+  voltar(){
+    window.history.go(-1);
   }
 }
