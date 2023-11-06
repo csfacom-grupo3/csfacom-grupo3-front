@@ -11,6 +11,7 @@ import { FeatureModule } from './features/features.module';
 import { PopupAdministrativaComponent } from './shared/components/popup-administrativa/popup-administrativa.component';
 import { InterceptorModule } from './core/service/interceptor/interceptor.module';
 import { SucessoAdicaoComponent } from './shared/components/sucesso-adicao/sucesso-adicao.component';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 @NgModule({
   declarations: [

@@ -22,6 +22,8 @@ import { ProjetosComponent } from './public/projetos/projetos.component';
 import { NoticiasComponent } from './public/noticias/noticias.component';
 import { ContatosComponent } from './public/contatos/contatos.component';
 import { SobreNosComponent } from './public/sobre-nos/sobre-nos.component';
+import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo.component';
+import { LoaderComponent } from "../shared/components/loader/loader.component";
 
 
 
@@ -39,7 +41,9 @@ import { SobreNosComponent } from './public/sobre-nos/sobre-nos.component';
       NoticiasComponent,
       MembrosComponent,
       SobreNosComponent,
-      ContatosComponent
+      ContatosComponent,
+      NovoVinculoComponent,
+      LoaderComponent
     ],
     imports: [
       AppRoutingModule,
@@ -48,7 +52,7 @@ import { SobreNosComponent } from './public/sobre-nos/sobre-nos.component';
       HttpClientModule,
       CommonModule,
       AdminRoutingModule,
-      MatCardModule
+      MatCardModule,
     ],
     exports: [SecaoAdministrativaComponent],
     bootstrap: []

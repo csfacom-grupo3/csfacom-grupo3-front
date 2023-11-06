@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ApiService } from 'src/app/core/service/Api.Service';
 import { SucessoAdicaoComponent } from 'src/app/shared/components/sucesso-adicao/sucesso-adicao.component';
+import { NovoVinculoComponent } from '../../vinculos/novo-vinculo/novo-vinculo.component';
 
 @Component({
   selector: 'app-novo-usuario',
@@ -32,15 +33,7 @@ export class NovoUsuarioComponent implements OnInit{
   });
 
   ngOnInit(): void {
-    this._apiService.get('academic_bonds')
-      .subscribe({
-        next: (data) =>{
-          this.vinculos = data;
-        },
-        error: (erro) => {
-          console.log(erro);
-        }
-      })
+    this.buscarVinculos();
   }
 
   checkArquivo(event : any){
@@ -77,6 +70,30 @@ export class NovoUsuarioComponent implements OnInit{
     this.dialog.open(SucessoAdicaoComponent, {
       height: '35%',
       width: '50%',
+    });
+  }
+
+  buscarVinculos(){
+    this._apiService.get('academic_bonds')
+    .subscribe({
+      next: (data) =>{
+        this.vinculos = data;
+      },
+      error: (erro) => {
+        console.log(erro);
+      }
+    })
+  }
+
+  novoVinculo(){
+    const dialogRef = this.dialog.open(NovoVinculoComponent, {
+      height: '35%',
+      width: '50%',
+    });
+
+    dialogRef.afterClosed()
+    .subscribe(() => {
+      this.buscarVinculos();
     });
   }
 }

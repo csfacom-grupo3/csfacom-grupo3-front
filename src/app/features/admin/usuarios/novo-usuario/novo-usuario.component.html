@@ -61,18 +61,29 @@
                 class="inputs icon-senha input" 
                 type="password"
                 placeholder="Repetir a senha">
+            
+            <div 
+                class="w-2/4 flex ">
 
-            <select
+                <select
                 formControlName="academic_bond_id"
-                class="input">
-                <option value="0">Selecione o tipo de vinculo</option>
-                <option 
-                    *ngFor="let vinculo of vinculos"
-                    [value]="vinculo.id">
-                    {{ vinculo.bond_kind }}
-                </option>
-            </select>
-        </form>
+                class="input w-full ml-0">
+                    <option 
+                        value="0">Selecione o tipo de vinculo</option>
+                    <option 
+                        *ngFor="let vinculo of vinculos"
+                        [value]="vinculo.id">
+                        {{ vinculo.bond_kind }}
+                    </option>
+                </select>
+                
+                <button
+                    (click)="novoVinculo()"
+                    class="botao-verde center w-12 h-10 m-2">
+                    <img src="../../../../../assets/icons/novo-usuario/plus.svg" alt="Icone de adição">
+                </button>
+            </div>
+    </form>
 
         <button 
             class="botaoCad botao-azul m-2"
