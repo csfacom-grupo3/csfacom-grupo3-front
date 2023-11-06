@@ -7,30 +7,35 @@
       <div class="flex flex-row justify-evenly max-sm:flex-col">
           <app-card 
             img="../../../../assets/icons/engrenagens.svg" 
-            name="Projetos">
+            name="Projetos"
+            routerLink="/projetos">
           </app-card>
           
           <app-card 
             img="../../../../assets/icons/sobre-nos.svg" 
-            name="Sobre nós">
+            name="Sobre nós"
+            routerLink="/sobrenos">
           </app-card>
           
           <app-card 
               img="../../../../assets/icons/users.svg" 
               name="Membros"
-              (click)="abrirModal()">
-            </app-card>
+              routerLink="/membros">
+          </app-card>
       </div>
 
       <div class="flex flex-row justify-evenly max-sm:flex-col">
         <app-card 
           img="../../../../assets/icons/noticia.svg" 
-          name="Notícias">
+          name="Notícias"
+          routerLink="/noticias">
         </app-card>
 
-          <app-card 
-              img="../../../../assets/icons/contatos.svg" 
-              name="Contatos"></app-card>
+        <app-card 
+          img="../../../../assets/icons/contatos.svg" 
+          name="Contatos"
+          routerLink="/contatos">
+        </app-card>
       </div>    
   </div>    
 </nav>

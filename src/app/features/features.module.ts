@@ -3,19 +3,25 @@ import { CoreModule } from "../core/core.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "../app-routing.module";
 
+import { CommonModule } from "@angular/common";
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from "@angular/common/http";
 
-import { LoginComponent } from "./admin/autenticacao/login/login.component";
 import { AdminRoutingModule } from "./admin/admin-routing.module";
+import { LoginComponent } from "./admin/autenticacao/login/login.component";
 import { NovoProjetoComponent } from "./admin/projetos/novo-projeto/novo-projeto.component";
 import { NovoUsuarioComponent } from './admin/usuarios/novo-usuario/novo-usuario.component';
-import { RecuperarSenhaComponent } from './admin/autenticacao/recuperar-senha/recuperar-senha.component';
 import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar-usuarios.component';
 import { ListarProjetosComponent } from "./admin/projetos/listar-projetos/listar-projetos.component";
+import { RecuperarSenhaComponent } from './admin/autenticacao/recuperar-senha/recuperar-senha.component';
 import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";
-import { HttpClientModule } from "@angular/common/http";
-import { CommonModule } from "@angular/common";
+
 import { HomeComponent } from './public/home/home.component';
+import { MembrosComponent } from './public/membros/membros.component';
+import { ProjetosComponent } from './public/projetos/projetos.component';
+import { NoticiasComponent } from './public/noticias/noticias.component';
+import { ContatosComponent } from './public/contatos/contatos.component';
+import { SobreNosComponent } from './public/sobre-nos/sobre-nos.component';
 
 
 
@@ -28,7 +34,12 @@ import { HomeComponent } from './public/home/home.component';
       NovoUsuarioComponent,
       ListarUsuariosComponent,
       RecuperarSenhaComponent,
-      HomeComponent
+      HomeComponent,
+      ProjetosComponent,
+      NoticiasComponent,
+      MembrosComponent,
+      SobreNosComponent,
+      ContatosComponent
     ],
     imports: [
       AppRoutingModule,

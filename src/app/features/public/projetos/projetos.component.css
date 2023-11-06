@@ -1,0 +1,20 @@
+.page {
+  padding: 110px 200px;
+}
+
+.projeto-span {
+  margin-bottom: 47px;
+  
+}
+
+.projeto-span span {
+  font-family: roboto;
+  font-weight: bold;
+  font-size: 40px;
+  color: #0099CB;
+}
+
+.projeto {
+  display: flex;
+  flex-direction: row;
+}
