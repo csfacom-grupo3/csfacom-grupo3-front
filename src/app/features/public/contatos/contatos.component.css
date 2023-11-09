@@ -1,8 +1,11 @@
+.body{
+  margin-left: 10rem;
+
+}
 .titulo{
   display: flex;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  margin-left: 10rem;
   margin-top: 4rem;
 }
 
@@ -12,20 +15,46 @@
   background-color: #E6F5FA;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
-  border-radius: 10px; 
+  border-radius: 10px;
   align-items: center;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
 .detalhes{
-  margin-left: 2rem;
-  margin-top: 3rem;
+  font-size: 25px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
-.detelhes-titulo{
+.column{
+  font-family: 'Inter ', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.campo {
+  display: flex;
+  align-items: center;
+}
+
+.linha{
+  font-size: 23px;
+  margin-top: 2rem;
+}
+
+.detalhes-titulo{
   text-align: end;
   margin-left: 15px;
   margin-right: 5px;
   font-weight: bold;
+}
+
+.maps{
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-top: 3rem;
+  width: 100rem;
+  height: 30rem;
 }
