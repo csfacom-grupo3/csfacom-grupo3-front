@@ -1,0 +1,24 @@
+.card{
+  margin-top: 2rem;
+  max-width: 100rem;
+  display: flex;
+  justify-content: start;
+  text-align: start;
+}
+img{
+  margin-top: 15px;
+  height: 10rem;
+}
+
+.text{
+  font-family: 'Inter', sans-serif;
+  margin-left: 2rem;
+}
+
+.card-header{
+  font-size: 35px;
+}
+
+.card-desc{
+  font-size: 30px;
+}

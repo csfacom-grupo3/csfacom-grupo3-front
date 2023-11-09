@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { isLogged } from './core/service/guard/auth.guard';
 import { HomeComponent } from './features/public/home/home.component';
 import { MembrosComponent } from './features/public/membros/membros.component';
-import { ProjetosComponent } from './features/public/projetos/projetos.component';
+import { ListaProjetosComponent } from './features/public/lista-projetos/lista-projetos.component';
 import { ContatosComponent } from './features/public/contatos/contatos.component';
-import { NoticiasComponent } from './features/public/noticias/noticias.component';
+import { ListaNoticiasComponent } from './features/public/lista-noticias/lista-noticias.component';
 import { SobreNosComponent } from './features/public/sobre-nos/sobre-nos.component';
 import { LoginComponent } from './features/admin/autenticacao/login/login.component';
 import { RecuperarSenhaComponent } from './features/admin/autenticacao/recuperar-senha/recuperar-senha.component';
@@ -32,12 +32,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:'projetos',
-    component: ProjetosComponent
+    path:'lista-projetos',
+    component: ListaProjetosComponent
   },
   {
-    path:'noticias',
-    component: NoticiasComponent
+    path:'lista-noticias',
+    component: ListaNoticiasComponent
   },
   {
     path:'membros',

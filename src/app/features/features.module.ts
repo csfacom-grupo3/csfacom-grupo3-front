@@ -18,14 +18,14 @@ import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao
 
 import { HomeComponent } from './public/home/home.component';
 import { MembrosComponent } from './public/membros/membros.component';
-import { ProjetosComponent } from './public/projetos/projetos.component';
-import { NoticiasComponent } from './public/noticias/noticias.component';
+import { ListaNoticiasComponent } from './public/lista-noticias/lista-noticias.component';
 import { ContatosComponent } from './public/contatos/contatos.component';
 import { SobreNosComponent } from './public/sobre-nos/sobre-nos.component';
 import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo.component';
 import { LoaderComponent } from "../shared/components/loader/loader.component";
-
-
+import { ProjetoComponent } from './public/projeto/projeto.component';
+import { NoticiaComponent } from './public/noticia/noticia.component';
+import { ListaProjetosComponent } from './public/lista-projetos/lista-projetos.component';
 
 @NgModule({
     declarations: [
@@ -37,13 +37,15 @@ import { LoaderComponent } from "../shared/components/loader/loader.component";
       ListarUsuariosComponent,
       RecuperarSenhaComponent,
       HomeComponent,
-      ProjetosComponent,
-      NoticiasComponent,
       MembrosComponent,
       SobreNosComponent,
       ContatosComponent,
       NovoVinculoComponent,
-      LoaderComponent
+      LoaderComponent,
+      ProjetoComponent,
+      NoticiaComponent,
+      ListaNoticiasComponent,
+      ListaProjetosComponent
     ],
     imports: [
       AppRoutingModule,
@@ -53,6 +55,7 @@ import { LoaderComponent } from "../shared/components/loader/loader.component";
       CommonModule,
       AdminRoutingModule,
       MatCardModule,
+      //AgmCoreModule.forRoot({ apiKey: 'AIzaSyDarpeNO0XsRILHCG9er6ZKM_s5bYg5Rdg'})
     ],
     exports: [SecaoAdministrativaComponent],
     bootstrap: []
