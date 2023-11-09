@@ -1,0 +1,38 @@
+.titulo{
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.body{
+  margin-left: 10rem;
+  max-width: 100rem;
+}
+
+.sub-titulo{
+  font-family: 'Roboto', sans-serif;
+  font-size: 30px;
+  color: #0099CB;
+  margin: 2rem 0 2rem 0;
+}
+
+.desc{
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+}
+img{
+  max-height: 20px;
+}
+.link{
+  margin: 2rem 1rem 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.text-link{
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  margin-left: 1rem;
+}
