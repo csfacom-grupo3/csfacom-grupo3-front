@@ -1,0 +1,10 @@
+.body{
+  margin-left: 10rem;
+
+}
+.titulo{
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-top: 4rem;
+}

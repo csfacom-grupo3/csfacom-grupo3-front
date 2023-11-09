@@ -9,6 +9,7 @@ import { CardCarrosselComponent } from './components/card-carrossel/card-carross
 
 import { CarouselModule } from '@coreui/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardDatailsComponent } from './components/card-datails/card-datails.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       NavComponent,
       CardCarrosselComponent,
       CarrosselComponent,
-      FooterComponent
+      FooterComponent,
+      CardDatailsComponent
     ],
     imports: [
       AppRoutingModule,
@@ -28,7 +30,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       NavComponent,
       CardCarrosselComponent,
       CarrosselComponent,
-      FooterComponent
+      FooterComponent,
+      CardDatailsComponent
     ]
   })
   export class CoreModule { }

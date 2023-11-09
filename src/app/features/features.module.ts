@@ -3,19 +3,24 @@ import { CoreModule } from "../core/core.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from "../app-routing.module";
 
+import { CommonModule } from "@angular/common";
 import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from "@angular/common/http";
 
-import { LoginComponent } from "./admin/autenticacao/login/login.component";
 import { AdminRoutingModule } from "./admin/admin-routing.module";
+import { LoginComponent } from "./admin/autenticacao/login/login.component";
 import { NovoProjetoComponent } from "./admin/projetos/novo-projeto/novo-projeto.component";
 import { NovoUsuarioComponent } from './admin/usuarios/novo-usuario/novo-usuario.component';
-import { RecuperarSenhaComponent } from './admin/autenticacao/recuperar-senha/recuperar-senha.component';
 import { ListarUsuariosComponent } from './admin/usuarios/listar-usuarios/listar-usuarios.component';
 import { ListarProjetosComponent } from "./admin/projetos/listar-projetos/listar-projetos.component";
+import { RecuperarSenhaComponent } from './admin/autenticacao/recuperar-senha/recuperar-senha.component';
 import { SecaoAdministrativaComponent } from "./admin/secao-administrativa/secao-administrativa.component";
-import { HttpClientModule } from "@angular/common/http";
-import { CommonModule } from "@angular/common";
+
 import { HomeComponent } from './public/home/home.component';
+import { MembrosComponent } from './public/membros/membros.component';
+import { ListaNoticiasComponent } from './public/lista-noticias/lista-noticias.component';
+import { ContatosComponent } from './public/contatos/contatos.component';
+import { SobreNosComponent } from './public/sobre-nos/sobre-nos.component';
 import { NovoVinculoComponent } from './admin/vinculos/novo-vinculo/novo-vinculo.component';
 import { LoaderComponent } from "../shared/components/loader/loader.component";
 import { ToastrModule } from "ngx-toastr";
@@ -24,6 +29,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ListAdminComponent } from "../shared/components/list-admin/list-admin.component";
 
 
+import { ProjetoComponent } from './public/projeto/projeto.component';
+import { NoticiaComponent } from './public/noticia/noticia.component';
+import { ListaProjetosComponent } from './public/lista-projetos/lista-projetos.component';
 
 @NgModule({
     declarations: [
@@ -35,9 +43,16 @@ import { ListAdminComponent } from "../shared/components/list-admin/list-admin.c
       ListarUsuariosComponent,
       RecuperarSenhaComponent,
       HomeComponent,
+      MembrosComponent,
+      SobreNosComponent,
+      ContatosComponent,
       NovoVinculoComponent,
       LoaderComponent,
-      ListAdminComponent
+      ListAdminComponent,
+      ProjetoComponent,
+      NoticiaComponent,
+      ListaNoticiasComponent,
+      ListaProjetosComponent
     ],
     imports: [
       AppRoutingModule,
@@ -54,7 +69,9 @@ import { ListAdminComponent } from "../shared/components/list-admin/list-admin.c
         positionClass: 'toast-top-right',
         progressBar: true,
         closeButton : true          
-      })
+      }),
+      MatCardModule,
+      //AgmCoreModule.forRoot({ apiKey: 'AIzaSyDarpeNO0XsRILHCG9er6ZKM_s5bYg5Rdg'})
     ],
     exports: [SecaoAdministrativaComponent],
     bootstrap: []
