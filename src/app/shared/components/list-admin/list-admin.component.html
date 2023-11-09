@@ -1,0 +1,125 @@
+<div
+    class="m-8 mt-8 mb-8">
+        <h1 class="titulo">LISTA DE USUÁRIOS</h1>
+</div>
+
+<div class="center">
+    <input 
+        class="input w-11/12 icon-lupa pl-16"
+        type="text" 
+        placeholder="Buscar">
+</div>
+
+<div
+    class="w-full center flex-col">
+    <table
+        class="w-11/12">
+        <thead>
+        <tr>
+            <th 
+                class="w-2/4 text-left">
+                <div>
+                    Nome
+                </div>
+            </th>
+            <th
+                class="text-left">
+                <div
+                    class="center">
+                    Visível
+                </div>
+            </th>
+            <th
+                class="text-left">
+                <div
+                    class="center">
+                    GP
+                </div>
+            </th>
+            <th
+                class="text-left">
+                <div
+                    class="center">
+                    Admin
+                </div>
+            </th>
+            <th
+                class="text-left">
+                <div
+                    class="center">
+                    Editor
+                </div>
+            </th>
+            <th
+                class="text-left">
+                <div
+                    class="center">
+                    Editar
+                </div>
+            </th>
+            <th
+                class="text-left">
+                <div
+                    class="center">
+                    Excluir
+                </div>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr 
+                *ngFor="let lista of list;index as i"
+                [ngClass]="{'bg-azul-25': i % 2 != 0, 'bg-azul-50' : i % 2 == 0}">
+                <td>{{ lista.nome }}</td>
+                <td>
+                    <div
+                        class="center">
+                        <input type="checkbox">
+                    </div>
+                </td>
+                <td>
+                    <div
+                        class="center">
+                        <input type="checkbox">
+                    </div>
+                </td>
+                <td>
+                    <div
+                        class="center">
+                        <input type="checkbox">
+                    </div>
+                </td>
+                <td>
+                    <div
+                        class="center">
+                        <input type="checkbox">
+                    </div>
+                </td>
+                <td
+                    class="borda">
+                    <div
+                        class="center">
+                        <img src="../../../../../assets/icons/tabela-listagem/editar.svg" alt="Icone editar"> 
+                    </div>
+                </td>
+                <td
+                    class="borda">
+                    <div
+                        class="center">
+                        <img src="../../../../../assets/icons/tabela-listagem/excluir.svg" alt="Icone excluir"> 
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div
+    class="center m-8">
+    <button
+        class="botao-vermelho m-4">
+        Voltar</button>
+    <button
+        class="botao-verde m-4">
+        Salvar</button>
+</div>

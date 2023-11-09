@@ -48,6 +48,6 @@
     }
 
     .input{
-        @apply w-2/4 h-10 rounded-md m-2 focus:outline-none borda-opaca-sm shadow-md border-[#979797]
+        @apply w-2/4 h-10 rounded-md m-2 focus:outline-none borda-opaca-sm shadow-md border-[#979797] p-2
     }
 }

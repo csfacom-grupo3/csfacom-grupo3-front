@@ -1,0 +1,11 @@
+th{
+    left: 0;
+ }
+ 
+ td{
+    padding: 0.5%;
+ }
+ 
+ .borda{
+    border-left: solid 2px #0099CB;
+ }

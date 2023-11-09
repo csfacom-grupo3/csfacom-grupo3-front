@@ -40,5 +40,12 @@
         background-image: url("novo-projeto/iconengrenagem.svg");
         @apply icon
     }
+
+    .icon-lupa{
+        background-repeat: no-repeat;
+        background-position: calc(15px) center;
+        padding-right: 30px;        
+        background-image: url("tabela-listagem/lupa.svg");
+    }
 }
 

@@ -21,6 +21,7 @@ import { LoaderComponent } from "../shared/components/loader/loader.component";
 import { ToastrModule } from "ngx-toastr";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { ListAdminComponent } from "../shared/components/list-admin/list-admin.component";
 
 
 
@@ -35,7 +36,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
       RecuperarSenhaComponent,
       HomeComponent,
       NovoVinculoComponent,
-      LoaderComponent
+      LoaderComponent,
+      ListAdminComponent
     ],
     imports: [
       AppRoutingModule,

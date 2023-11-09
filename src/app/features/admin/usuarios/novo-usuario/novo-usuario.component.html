@@ -103,15 +103,15 @@
     <div>
 
         <button 
-            class="botaoCad botao-verde m-2"
-            [disabled]="!formClient.valid"
-            (click)="gravar()"
-            >Cadastrar</button>
-        
-        <button 
             class="botaoCad botao-vermelho m-2"
             (click)="voltar()"
             >Voltar</button>
+            
+            <button 
+                class="botaoCad botao-verde m-2"
+                [disabled]="!formClient.valid"
+                (click)="gravar()"
+                >Cadastrar</button>
 
     </div>
 
