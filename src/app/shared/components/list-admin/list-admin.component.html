@@ -23,6 +23,7 @@
                 </div>
             </th>
             <th
+                *ngIf="noticia"
                 class="text-left">
                 <div
                     class="center">
@@ -30,6 +31,7 @@
                 </div>
             </th>
             <th
+                *ngIf="usuario"
                 class="text-left">
                 <div
                     class="center">
@@ -37,6 +39,7 @@
                 </div>
             </th>
             <th
+                *ngIf="usuario"
                 class="text-left">
                 <div
                     class="center">
@@ -44,6 +47,7 @@
                 </div>
             </th>
             <th
+                *ngIf="usuario"
                 class="text-left">
                 <div
                     class="center">
@@ -68,28 +72,32 @@
         </thead>
         <tbody>
             <tr 
-                *ngFor="let lista of list;index as i"
+                *ngFor="let lista of linhasDaGrid;index as i"
                 [ngClass]="{'bg-azul-25': i % 2 != 0, 'bg-azul-50' : i % 2 == 0}">
-                <td>{{ lista.nome }}</td>
-                <td>
+                <td></td>
+                <td
+                    *ngIf="noticia">
                     <div
                         class="center">
                         <input type="checkbox">
                     </div>
                 </td>
-                <td>
+                <td
+                    *ngIf="usuario">
                     <div
                         class="center">
                         <input type="checkbox">
                     </div>
                 </td>
-                <td>
+                <td
+                    *ngIf="usuario">
                     <div
                         class="center">
                         <input type="checkbox">
                     </div>
                 </td>
-                <td>
+                <td
+                    *ngIf="usuario">
                     <div
                         class="center">
                         <input type="checkbox">
