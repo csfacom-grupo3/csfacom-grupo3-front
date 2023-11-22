@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NovoVinculoComponent } from './NovoVinculoComponent';
+import { NovoVinculoComponent } from './novo-vinculo.component';
 
 describe('NovoVinculoComponent', () => {
   let component: NovoVinculoComponent;

@@ -1,2 +1,13 @@
-<app-list-admin
-    [usuario]="true"></app-list-admin>
+<div class="usuarios-container">
+    <h2>Lista de Usuários</h2>
+  
+    <div *ngIf="users.length === 0" class="mensagem-vazia">
+      <p>Nenhum usuário encontrado.</p>
+    </div>
+  
+    <div *ngFor="let user of users" class="usuario-card">
+      <h3>{{ user.name }}</h3>
+      <p>Email: {{ user.email }}</p>
+      <!-- Adicionar outros campos  -->
+    </div>
+  </div>

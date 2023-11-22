@@ -1,0 +1,19 @@
+<div class="nova-noticia-container">
+  <h2>Criar Nova Notícia</h2>
+
+  <form [formGroup]="novaNoticiaForm" (ngSubmit)="criarNoticia()">
+    <div class="form-group">
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" formControlName="titulo">
+    </div>
+
+    <div class="form-group">
+      <label for="conteudo">Conteúdo</label>
+      <textarea id="conteudo" formControlName="conteudo"></textarea>
+    </div>
+
+    <!-- Adicionar outros campos -->
+
+    <button type="submit" [disabled]="!novaNoticiaForm.valid">Criar Notícia</button>
+  </form>
+</div>

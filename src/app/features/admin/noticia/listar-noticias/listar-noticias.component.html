@@ -1,0 +1,13 @@
+<div class="noticias-container">
+    <h2>Últimas Notícias</h2>
+  
+    <div *ngIf="noticias.length === 0" class="mensagem-vazia">
+      <p>Nenhuma notícia disponível no momento.</p>
+    </div>
+  
+    <div *ngFor="let noticia of noticias" class="noticia-card">
+      <h3>{{ noticia.titulo }}</h3>
+      <p>{{ noticia.conteudo }}</p>
+      <!-- Adicionar outros campos -->
+    </div>
+  </div>

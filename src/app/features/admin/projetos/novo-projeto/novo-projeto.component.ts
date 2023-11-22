@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/core/service/Api.Service';
 @Component({
   selector: 'app-novo-projeto',
   templateUrl: './novo-projeto.component.html',
   styleUrls: ['./novo-projeto.component.css']
 })
 export class NovoProjetoComponent {
+  novoProjetoForm: FormGroup;
   nomeArquivo! : string;
   imagem : string = "../../../../../assets/icons/novo-projeto/engrenagem.svg";
 
@@ -31,7 +34,26 @@ export class NovoProjetoComponent {
     }
    }
 
-   gravar(){
-    
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiService,
+    private router: Router
+  ) {
+    this.novoProjetoForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      // adicionar mais campos
+    });
+  }
+
+   gravar(): void{
+    if (this.novoProjetoForm.valid) {
+      const projetoData = this.novoProjetoForm.value;
+      this.apiService.post('projects', projetoData)
+        .subscribe(() => {
+          // Redirecionar para a página de detalhes do novo projeto ou outra rota desejada
+          this.router.navigate(['/projects']);
+        });
+    }
    }
 }

@@ -1,1 +1,13 @@
-<p>listar-projetos works!</p>
+<div class="projetos-container">
+    <h2>Lista de Projetos</h2>
+  
+    <div *ngIf="projects.length === 0" class="mensagem-vazia">
+      <p>Nenhum projeto encontrado.</p>
+    </div>
+  
+    <div *ngFor="let project of projects" class="projeto-card">
+      <h3>{{ project.name }}</h3>
+      <p>Descrição: {{ project.description }}</p>
+      <!-- Adicionar outros campos -->
+    </div>
+  </div>
