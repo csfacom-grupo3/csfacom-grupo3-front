@@ -1,30 +1,39 @@
-.usuarios-container {
-   max-width: 800px;
-   margin: 0 auto;
-   padding: 20px;
-   font-family: Arial, sans-serif;
- }
- 
- .usuario-card {
-   background-color: #f9f9f9;
-   border-radius: 5px;
-   padding: 15px;
-   margin-bottom: 15px;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
- }
- 
- .usuario-card h3 {
-   margin-top: 0;
-   margin-bottom: 10px;
-   color: #333;
- }
- 
- .usuario-card p {
-   color: #666;
- }
- 
- .mensagem-vazia {
-   text-align: center;
-   color: #666;
-   margin-top: 20px;
- }
+.listar-usuarios-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.usuario-item {
+  margin-bottom: 15px;
+}
+
+.usuario-item p {
+  margin: 0;
+}
+
+.alterar-btn,
+.excluir-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.alterar-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.excluir-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.alterar-btn:hover,
+.excluir-btn:hover {
+  opacity: 0.8;
+}

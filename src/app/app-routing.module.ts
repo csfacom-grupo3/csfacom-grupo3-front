@@ -10,6 +10,7 @@ import { ListaNoticiasComponent } from './features/public/lista-noticias/lista-n
 import { SobreNosComponent } from './features/public/sobre-nos/sobre-nos.component';
 import { LoginComponent } from './features/admin/autenticacao/login/login.component';
 import { RecuperarSenhaComponent } from './features/admin/autenticacao/recuperar-senha/recuperar-senha.component';
+import { ListarUsuariosComponent } from './features/admin/usuarios/listar-usuarios/listar-usuarios.component';
 
 const routes: Routes = [
   {    
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path:'contatos',
     component: ContatosComponent
+  },
+  {
+    path:'listar-usuarios',
+    component: ListarUsuariosComponent
   }
 ];
 

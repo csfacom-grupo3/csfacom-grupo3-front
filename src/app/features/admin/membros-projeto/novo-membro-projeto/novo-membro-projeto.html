@@ -1,0 +1,14 @@
+<div class="novo-membro-container">
+    <h2>Adicionar Novo Membro ao Projeto</h2>
+  
+    <form [formGroup]="novoMembroForm" (ngSubmit)="adicionarMembro()">
+      <div class="form-group">
+        <label for="userId">Selecione o Usuário:</label>
+        <select formControlName="userId" id="userId">
+          <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+        </select>
+      </div>
+  
+      <button type="submit" [disabled]="novoMembroForm.invalid">Adicionar</button>
+    </form>
+  </div>

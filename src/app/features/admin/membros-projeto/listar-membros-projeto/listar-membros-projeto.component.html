@@ -1,0 +1,13 @@
+<div class="membros-projeto-container">
+    <h2>Membros do Projeto</h2>
+  
+    <div *ngIf="members.length === 0" class="mensagem-vazia">
+      <p>Nenhum membro encontrado para este projeto.</p>
+    </div>
+  
+    <div *ngFor="let member of members" class="membro-card">
+      <h3>{{ member.name }}</h3>
+      <p>Email: {{ member.email }}</p>
+      <!-- Adicionar mais campos -->
+    </div>
+  </div>
