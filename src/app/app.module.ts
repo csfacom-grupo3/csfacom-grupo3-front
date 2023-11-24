@@ -12,12 +12,14 @@ import { PopupAdministrativaComponent } from './shared/components/popup-administ
 import { InterceptorModule } from './core/service/interceptor/interceptor.module';
 import { SucessoAdicaoComponent } from './shared/components/sucesso-adicao/sucesso-adicao.component';
 import { ListAdminComponent } from './shared/components/list-admin/list-admin.component';
+import { NoticiaComponent } from './feature/public/noticia/noticia.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PopupAdministrativaComponent,
-    SucessoAdicaoComponent
+    SucessoAdicaoComponent,
+    NoticiaComponent
   ],
   imports: [
     BrowserModule,

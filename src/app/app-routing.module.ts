@@ -10,7 +10,6 @@ import { ListaNoticiasComponent } from './features/public/lista-noticias/lista-n
 import { SobreNosComponent } from './features/public/sobre-nos/sobre-nos.component';
 import { LoginComponent } from './features/admin/autenticacao/login/login.component';
 import { RecuperarSenhaComponent } from './features/admin/autenticacao/recuperar-senha/recuperar-senha.component';
-
 // CRUD de usuários pelo admin
 import { ListarUsuariosComponent } from './features/admin/usuarios/listar-usuarios/listar-usuarios.component';
 import { NovoUsuarioComponent } from './features/admin/usuarios/novo-usuario/novo-usuario.component';
@@ -31,13 +30,15 @@ import { NovoProjetoComponent } from './features/admin/projetos/novo-projeto/nov
 // CRUD de vinculos pelo admin
 import { ListarVinculosComponent } from './features/admin/vinculos/listar-vinculos/listar-vinculos.component';
 import { NovoVinculoComponent } from './features/admin/vinculos/novo-vinculo/novo-vinculo.component';
+import { ProjetoComponent } from './features/public/projeto/projeto.component';
+import { NoticiaComponent } from './features/public/noticia/noticia.component';
 
 
 const routes: Routes = [
   {    
     path : 'login', 
     component: LoginComponent,
-    canActivate : [isLogged]
+    //canActivate : [isLogged]
   },
   {
     path : '',
@@ -47,7 +48,7 @@ const routes: Routes = [
   {
     path:'recuperar-senha',
     component: RecuperarSenhaComponent,
-    canActivate : [isLogged]
+    //canActivate : [isLogged]
   },
   {
     path:'home',
@@ -73,17 +74,25 @@ const routes: Routes = [
     path:'contatos',
     component: ContatosComponent
   },
+  {
+    path:'projeto',
+    component: ProjetoComponent
+  },
+  {
+    path:'noticia',
+    component: NoticiaComponent
+  },
 
   /////////////////////////////////
   {
     path:'listar-usuarios',
     component: ListarUsuariosComponent,
-    canActivate : [isLogged]
+    //canActivate : [isLogged]
   },
   {
     path:'novo-usuario',
     component: NovoUsuarioComponent,
-    canActivate : [isLogged]
+    //canActivate : [isLogged]
   },
   /*
   {

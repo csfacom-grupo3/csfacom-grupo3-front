@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-carrossel',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-carrossel.component.css']
 })
 export class CardCarrosselComponent {
-
+  @Input() title? : string;
 }
