@@ -1,15 +1,19 @@
 <div class="projetos-container">
-    <h2>Lista de Projetos</h2>
-  
-    <div *ngIf="projects.length === 0" class="mensagem-vazia">
-      <p>Nenhum projeto encontrado.</p>
-    </div>
-  
-    <div *ngFor="let project of projects" class="projeto-card">
-      <h3>{{ project.name }}</h3>
-      <p>Descrição: {{ project.description }}</p>
-      <!-- Adicionar outros campos -->
-    </div>
+  <h2>Lista de Projetos</h2>
 
-    <button (click)="redirecionarParaNovoVinculo()">Adicionar Vínculo</button>
+  <div *ngIf="projects.length === 0" class="mensagem-vazia">
+    <p>Nenhum projeto encontrado.</p>
   </div>
+
+  <div *ngFor="let project of projects" class="projeto-card">
+    <h3>{{ project.name }}</h3>
+    <p>Descrição: {{ project.description }}</p>
+    <p>Data de Início: {{ project.start_date }}</p>
+    <p>Data de Término: {{ project.end_date }}</p>
+
+    <button class="alterar-btn" (click)="redirecionarParaAlteracao(project.id)">Alterar</button>
+    <button class="excluir-btn" (click)="confirmarExclusao(project.id)">Excluir</button>
+  </div>
+
+  <button class="novo-projeto-btn" (click)="redirecionarParaNovoProjeto()">Adicionar Projeto</button>
+</div>

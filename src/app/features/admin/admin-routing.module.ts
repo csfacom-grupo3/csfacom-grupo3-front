@@ -6,6 +6,11 @@ import { NovoProjetoComponent } from './projetos/novo-projeto/novo-projeto.compo
 import { ListarUsuariosComponent } from './usuarios/listar-usuarios/listar-usuarios.component';
 import { NovoUsuarioComponent } from './usuarios/novo-usuario/novo-usuario.component';
 import { authGuard } from '../../core/service/guard/auth.guard';
+//import { AlterarUsuarioComponent } from './usuarios/alterar-usuario/alterar-usuario.component';
+import { DeletarUsuarioComponent } from './usuarios/deletar-usuario/deletar-usuario.component';
+import { ListarNoticiasComponent } from './noticia/listar-noticias/listar-noticias.component';
+import { NovaNoticiaComponent } from './noticia/nova-noticia/nova-noticia.component';
+//import { DeletarProjetoComponent } from './projetos/deletar-projeto/deletar-projeto.component';
 
 const routes: Routes = [
   {
@@ -31,6 +36,21 @@ const routes: Routes = [
   {
     path: 'secao-administrativa/novo-usuario', 
     component: NovoUsuarioComponent,
+    canActivate : [authGuard]
+  },
+  {
+    path:'secao-administrativa/deletar-usuario/:id',
+    component: DeletarUsuarioComponent,
+    canActivate : [authGuard]
+  },
+  {
+    path: 'secao-administrativa/listar-noticias', 
+    component: ListarNoticiasComponent,
+    canActivate : [authGuard]
+  },
+  {
+    path: 'secao-administrativa/nova-noticia', 
+    component: NovaNoticiaComponent,
     canActivate : [authGuard]
   }
 ];

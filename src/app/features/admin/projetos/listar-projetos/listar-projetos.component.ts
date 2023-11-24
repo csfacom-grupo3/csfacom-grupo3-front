@@ -23,7 +23,19 @@ export class ListarProjetosComponent implements OnInit {
       });
   }
 
-  redirecionarParaNovoVinculo(): void {
-    this.router.navigate(['/novo-projeto']); 
+  redirecionarParaAlteracao(idProjeto: string): void {
+    this.router.navigate(['/secao-administrativa/alterar-projeto', idProjeto]);
+  }
+
+  confirmarExclusao(projectId: string) {
+    if (confirm('Tem certeza que deseja excluir este projeto?')) {
+      this.apiService.delete(`projects/${projectId}`).subscribe(() => {
+        this.carregarProjetos();
+      });
+    }
+  }
+
+  redirecionarParaNovoProjeto(): void {
+    this.router.navigate(['/secao-administrativa/novo-projeto']); 
   }
 }

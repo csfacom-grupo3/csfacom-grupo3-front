@@ -1,44 +1,59 @@
 .projetos-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .projeto-card {
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .projeto-card h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .projeto-card p {
-    color: #666;
-  }
-  
-  .mensagem-vazia {
-    text-align: center;
-    color: #666;
-    margin-top: 20px;
-  }
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
 
-  .btn-adicionar {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .btn-adicionar:hover {
-    opacity: 0.8;
-  }
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.mensagem-vazia {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+}
+
+.projeto-card {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f3f3f3;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.projeto-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  margin-top: 10px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.excluir-btn {
+  background-color: #dc3545;
+}
+
+.excluir-btn:hover {
+  background-color: #bb2d3b;
+}
+
+button + button {
+  margin-left: 10px;
+}

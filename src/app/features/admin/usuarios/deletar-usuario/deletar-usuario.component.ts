@@ -24,10 +24,14 @@ export class DeletarUsuarioComponent implements OnInit {
 
   confirmarDelecao(): void {
     if (confirm('Tem certeza que deseja deletar este usuário?')) {
-      this.apiService.delete(`usuarios/${this.userId}`)
+      this.apiService.delete(`users/${this.userId}`)
         .subscribe(() => {
-          this.router.navigate(['/listar-usuarios']);
+          this.router.navigate(['secao-administrativa/listar-usuarios']);
         });
     }
+  }
+
+  cancelarDelecao(): void {
+    this.router.navigate(['secao-administrativa/listar-usuarios']);
   }
 }

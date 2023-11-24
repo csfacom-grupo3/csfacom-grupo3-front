@@ -25,7 +25,7 @@ export class SecaoAdministrativaComponent {
       novo : "Cadastrar novo usuário",
       listar : "Listar usuários",
       rotaListar : "/secao-administrativa/listar-usuarios",
-      rotaNovo: "/secao-administrativa/novo-usuario"
+      rotaNovo: "/secao-administrativa/novo-usuario",
     },
     {
       titulo : "NOTÍCIAS",

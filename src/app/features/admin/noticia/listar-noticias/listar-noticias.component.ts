@@ -17,20 +17,25 @@ export class ListarNoticiasComponent implements OnInit {
   }
 
   carregarNoticias(): void {
-    this.apiService.get('noticias').subscribe((data: any[]) => {
-      this.noticias = data;
-    });
+    this.apiService.get('news')
+      .subscribe((data) => {
+        this.noticias = data;
+      });
   }
 
   redirecionarParaAlterar(noticiaId: string): void {
-    this.router.navigate([`/alterar-noticia/${noticiaId}`]);
+    this.router.navigate([`/secao-administrativa/alterar-noticia/${noticiaId}`]);
   }
 
-  redirecionarParaExcluir(noticiaId: string): void {
-    this.router.navigate([`/excluir-noticia/${noticiaId}`]);
+  confirmarExclusao(idNoticia: string) {
+    if (confirm('Tem certeza que deseja excluir esta noticia?')) {
+      this.apiService.delete(`news/${idNoticia}`).subscribe(() => {
+        this.carregarNoticias();
+      });
+    }
   }
 
   redirecionarParaNovaNoticia(): void {
-    this.router.navigate(['/nova-noticia']);
+    this.router.navigate(['/secao-administrativa/nova-noticia']);
   }
 }

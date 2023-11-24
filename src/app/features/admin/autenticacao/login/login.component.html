@@ -1,6 +1,4 @@
-<app-loader
-  *ngIf="loader"></app-loader>
-
+<app-loader *ngIf="loader"></app-loader>
 
 <div class="login">
   <mat-card class="cardlogin">
@@ -11,30 +9,30 @@
       [formGroup]="formClient">
 
       <input
-      class="inputlogin icon-usuario input"
-      type="text"
-      placeholder="Usuário"
-      formControlName="email">
+        class="inputlogin icon-usuario input"
+        type="text"
+        placeholder="Usuário"
+        formControlName="email"
+        aria-label="Usuário">
 
       <input
         class="inputlogin icon-senha input" 
         type="password"
         placeholder="Senha"
-        formControlName="password">
-    </form>
+        formControlName="password"
+        aria-label="Senha">
 
-    <div *ngIf="falhaLogin">
-      <span>Usuário ou senha incorretos</span>
-    </div>
+      <div *ngIf="falhaLogin" class="mensagem-erro">
+        Usuário ou senha incorretos
+      </div>
+    </form>
 
     <button 
       class="botaologin botao-azul m-2"
       (click)="logar()">
-      Entrar </button>
+      Entrar
+    </button>
 
     <a class="link" routerLink="/recuperar-senha">Esqueceu a senha? Clique aqui</a>
-    
-
   </mat-card>
-
 </div>

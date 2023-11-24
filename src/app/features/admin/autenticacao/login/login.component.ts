@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/core/service/Api.Service';
@@ -12,36 +12,41 @@ import { Auth } from 'src/app/shared/class/auth';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  falhaLogin : boolean = false;
-  loader : boolean = false;
+  falhaLogin: boolean = false;
+  loader: boolean = false;
+  formClient: FormGroup;
 
-  constructor(private _apiService: ApiService,
-              private _router: Router,
-              private _authService: AuthService,
-              private toastr: ToastrService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiService,
+    private router: Router,
+    private authService: AuthService,
+    private toastr: ToastrService
+  ) {
+    this.formClient = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
 
-  formClient : FormGroup = new FormGroup({
-    email: new FormControl(),
-    password: new FormControl(),
-  });
-  
-  logar(){
-    const dataForm = this.formClient.value;
-    this.loader = true;
+  logar(): void {
+    if (this.formClient.valid) {
+      const dataForm = this.formClient.value;
+      this.loader = true;
 
-    
-    this._apiService.post("users/sign_in", dataForm)
-      .subscribe({
-        next: (data) => {
-          this._authService.log(new Auth(data.email, data.token));          
-
-          this._router.navigate(['/secao-administrativa']);
+      this.apiService.post("users/sign_in", dataForm).subscribe({
+        next: (data: any) => {
+          this.authService.log(new Auth(data.email, data.token));
+          this.router.navigate(['/secao-administrativa']);
         },
-        error: (erro)=>{
-          if(erro.error.errors[0] == 'Email ou senha inválida'){
+        error: (erro: any) => {
+          if (erro.error.errors[0] === 'Email ou senha inválida') {
             this.falhaLogin = true;
           }
+          this.toastr.error('Falha ao fazer login. Por favor, verifique suas credenciais.');
+          this.loader = false;
         }
       });
-  }  
+    }
+  }
 }

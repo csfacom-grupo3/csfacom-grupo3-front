@@ -1,5 +1,5 @@
 .listar-usuarios-container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -7,10 +7,16 @@
 
 .usuario-item {
   margin-bottom: 15px;
+  padding: 15px;
+  background-color: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .usuario-item p {
   margin: 0;
+  font-size: 16px;
+  color: #333;
 }
 
 .alterar-btn,
@@ -21,6 +27,7 @@
   border: none;
   border-radius: 4px;
   margin-right: 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .alterar-btn {
@@ -40,13 +47,14 @@
 
 .novo-usuario-btn {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 12px 24px;
+  font-size: 18px;
   cursor: pointer;
   background-color: #28a745;
   color: white;
   border: none;
   border-radius: 4px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .novo-usuario-btn:hover {

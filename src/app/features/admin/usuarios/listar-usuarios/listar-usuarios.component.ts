@@ -23,14 +23,14 @@ export class ListarUsuariosComponent implements OnInit {
   }
 
   redirecionarParaAlteracao(idUsuario: string): void {
-    this.router.navigate(['/alterar-usuario', idUsuario]);
+    this.router.navigate(['/secao-administrativa/alterar-usuario', idUsuario]);
   }
 
   redirecionarParaExclusao(idUsuario: string): void {
-    this.router.navigate(['/deletar-usuario', idUsuario]);
+    this.router.navigate(['/secao-administrativa/deletar-usuario', idUsuario]);
   }
 
   redirecionarParaNovoUsuario(): void {
-    this.router.navigate(['/novo-usuario']); 
+    this.router.navigate(['/secao-administrativa/novo-usuario']); 
   }
 }
