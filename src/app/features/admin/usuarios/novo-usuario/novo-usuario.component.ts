@@ -34,7 +34,7 @@ export class NovoUsuarioComponent implements OnInit{
       github: new FormControl(),
       password: new FormControl(null, [Validators.min(8), Validators.required]),
       password_confirmation: new FormControl(null, [Validators.min(8), Validators.required]),
-      academic_bond_id: new FormControl(0),
+      //academic_bond_id: new FormControl(0),
     });
 
     this.buscarVinculos();
@@ -59,10 +59,10 @@ export class NovoUsuarioComponent implements OnInit{
     this._apiService.post("users", dataForm)
     .subscribe({
       next: (data) => {   
-        this.formClient.reset({
-          academic_bond_id: 0
-        });
-        this.abrirModal();
+        //this.formClient.reset({
+        //  academic_bond_id: 0
+        //});
+        //this.abrirModal();
         this.loader = false;
       },
       error: (erro)=>{

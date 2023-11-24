@@ -17,17 +17,20 @@ export class ListarUsuariosComponent implements OnInit {
   }
 
   carregarUsuarios(): void {
-    this.apiService.get('usuarios').subscribe((data: any[]) => {
+    this.apiService.get('users').subscribe((data: any[]) => {
       this.usuarios = data;
     });
   }
 
   redirecionarParaAlteracao(idUsuario: string): void {
     this.router.navigate(['/alterar-usuario', idUsuario]);
-    // Redireciona para a rota '/alterar-usuario' com o parâmetro idUsuario
   }
 
   redirecionarParaExclusao(idUsuario: string): void {
-    // Lógica para redirecionar para a página de exclusão de usuário com base no idUsuario
+    this.router.navigate(['/deletar-usuario', idUsuario]);
+  }
+
+  redirecionarParaNovoUsuario(): void {
+    this.router.navigate(['/novo-usuario']); 
   }
 }

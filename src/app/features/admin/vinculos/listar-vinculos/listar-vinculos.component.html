@@ -1,0 +1,12 @@
+<div class="vinculos-container">
+    <h2>Lista de Vínculos</h2>
+  
+    <div *ngFor="let vinculo of vinculos" class="vinculo-card">
+      <h3>{{ vinculo.nome }}</h3>
+      <p>Descrição: {{ vinculo.descricao }}</p>
+      <!-- Outros campos do vínculo -->
+    </div>
+  
+    <!-- Botão para adicionar novo vínculo -->
+    <button class="btn-adicionar" (click)="redirecionarParaAdicionarVinculo()">Adicionar Vínculo</button>
+  </div>

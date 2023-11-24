@@ -1,0 +1,61 @@
+/* Estilos para o componente NovoVinculoComponent */
+.dialog {
+    /* Estilos gerais para o dialog */
+    width: 100%;
+    height: 100%;
+  }
+  
+  .center {
+    /* Estilos para centralizar elementos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .titulo {
+    /* Estilos para o título */
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .input {
+    /* Estilos para o input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 300px;
+    margin-bottom: 15px;
+  }
+  
+  .botao-verde,
+  .botao-vermelho {
+    /* Estilos para os botões */
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .botao-verde {
+    /* Estilos para o botão verde */
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .botao-verde:hover {
+    /* Estilos de hover para o botão verde */
+    opacity: 0.8;
+  }
+  
+  .botao-vermelho {
+    /* Estilos para o botão vermelho */
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .botao-vermelho:hover {
+    /* Estilos de hover para o botão vermelho */
+    opacity: 0.8;
+  }

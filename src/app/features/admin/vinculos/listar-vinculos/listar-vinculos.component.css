@@ -1,11 +1,12 @@
-.projetos-container {
+/* Estilos para a listagem de vínculos */
+.vinculos-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
   }
   
-  .projeto-card {
+  .vinculo-card {
     background-color: #f9f9f9;
     border-radius: 5px;
     padding: 15px;
@@ -13,22 +14,17 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   }
   
-  .projeto-card h3 {
+  .vinculo-card h3 {
     margin-top: 0;
     margin-bottom: 10px;
     color: #333;
   }
   
-  .projeto-card p {
+  .vinculo-card p {
     color: #666;
   }
   
-  .mensagem-vazia {
-    text-align: center;
-    color: #666;
-    margin-top: 20px;
-  }
-
+  /* Estilos para o botão de adicionar vínculo */
   .btn-adicionar {
     margin-top: 20px;
     padding: 10px 20px;

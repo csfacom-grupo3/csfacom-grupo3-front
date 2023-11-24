@@ -1,30 +1,47 @@
-.noticias-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .noticia-card {
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .noticia-card h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .noticia-card p {
-    color: #666;
-  }
-  
-  .mensagem-vazia {
-    text-align: center;
-    color: #666;
-    margin-top: 20px;
-  }
+.listar-noticias-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.noticia-item {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.noticia-item h3 {
+  margin-bottom: 5px;
+}
+
+.alterar-btn,
+.excluir-btn,
+.adicionar-noticia-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+}
+
+.alterar-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.excluir-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.adicionar-noticia-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.alterar-btn:hover,
+.excluir-btn:hover,
+.adicionar-noticia-btn:hover {
+  opacity: 0.8;
+}

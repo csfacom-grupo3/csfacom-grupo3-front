@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/service/Api.Service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nova-noticia',
@@ -9,28 +8,19 @@ import { ApiService } from 'src/app/core/service/Api.Service';
   styleUrls: ['./nova-noticia.component.css']
 })
 export class NovaNoticiaComponent {
-  novaNoticiaForm: FormGroup;
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private apiService: ApiService,
-    private router: Router
-  ) {
-    this.novaNoticiaForm = this.formBuilder.group({
-      titulo: ['', Validators.required],
-      conteudo: ['', Validators.required],
-      // Outros campos conforme necessário para a notícia
-    });
-  }
+  constructor(private apiService: ApiService, private router: Router) {}
 
-  criarNoticia(): void {
-    if (this.novaNoticiaForm.valid) {
-      const dadosNoticia = this.novaNoticiaForm.value;
-      this.apiService.post('noticias', dadosNoticia)
-        .subscribe(() => {
-          // Redirecionar para a lista de notícias ou outra rota desejada
-          this.router.navigate(['/noticias']);
-        });
-    }
+  criarNoticia(titulo: string, conteudo: string): void {
+    const novaNoticia = {
+      titulo: titulo,
+      conteudo: conteudo
+      // Adicione outros campos conforme necessário para a notícia
+    };
+
+    this.apiService.post('noticias', novaNoticia)
+      .subscribe(() => {
+        this.router.navigate(['/noticias']); // Redireciona para a lista de notícias após o sucesso
+      });
   }
 }

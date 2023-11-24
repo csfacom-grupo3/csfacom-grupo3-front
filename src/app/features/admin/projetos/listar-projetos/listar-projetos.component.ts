@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/core/service/Api.Service';
 
 @Component({
@@ -9,16 +10,20 @@ import { ApiService } from 'src/app/core/service/Api.Service';
 export class ListarProjetosComponent implements OnInit {
   projects: any[] = [];
 
-  constructor(private apiService: ApiService) { }
+  constructor(private router: Router, private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.fetchProjects();
+    this.carregarProjetos();
   }
 
-  fetchProjects(): void {
+  carregarProjetos(): void {
     this.apiService.get('projects')
       .subscribe((data) => {
         this.projects = data;
       });
+  }
+
+  redirecionarParaNovoVinculo(): void {
+    this.router.navigate(['/novo-projeto']); 
   }
 }

@@ -12,28 +12,26 @@ import { SucessoAdicaoComponent } from 'src/app/shared/components/sucesso-adicao
 export class NovoVinculoComponent {
   constructor(
     private _dialogRef: MatDialogRef<NovoVinculoComponent>,
-    public _dialog: MatDialog,
+    private _dialog: MatDialog,
     private _apiService: ApiService
-  ){ }
+  ) {}
 
-    vinculosAdicionados! : Vinculo[];
-
-  fechar(){
+  fechar(): void {
     this._dialogRef.close();
   }
 
-  salvar(nomeVinculo: string){
+  salvar(nomeVinculo: string): void {
     const vinculo = new Vinculo(nomeVinculo); 
     
-    this._apiService.post("academic_bonds", vinculo)
+    this._apiService.post('academic_bonds', vinculo)
       .subscribe({
         next: (data) => {
           this.abrirModal();
         },
-      })
+      });
   }
 
-  abrirModal(){
+  abrirModal(): void {
     this._dialog.open(SucessoAdicaoComponent, {
       height: '35%',
       width: '50%',
