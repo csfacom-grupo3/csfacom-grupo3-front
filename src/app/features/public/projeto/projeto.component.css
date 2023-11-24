@@ -1,20 +1,46 @@
 .page {
   padding: 110px 200px;
+  color: #0099cb;
 }
 
-.projeto-span {
+.projeto-span, .membros-span {
   margin-bottom: 47px;
-  
 }
 
-.projeto-span span {
+.projeto-span span, .membros-span span {
   font-family: roboto;
   font-weight: bold;
   font-size: 40px;
-  color: #0099CB;
+}
+
+img {
+  width: 40rem;
 }
 
 .projeto {
   display: flex;
   flex-direction: row;
+  gap: 23px;
+  align-items: center;
+  width: 980px;
+}
+
+.projeto-wrapper h1 {
+  font-family: Poppins;
+  font-size: 40px;
+}
+
+.projeto-wrapper h2 {
+  font-family: Inter;
+  font-size: 20px;
+}
+
+.projeto-wrapper p {
+  color: #000;
+  font-family: Inter;
+  font-size: 17px;
+}
+
+.membros-span {
+  margin-top: 3rem;
 }

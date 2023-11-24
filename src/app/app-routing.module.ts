@@ -11,7 +11,6 @@ import { SobreNosComponent } from './features/public/sobre-nos/sobre-nos.compone
 import { LoginComponent } from './features/admin/autenticacao/login/login.component';
 import { RecuperarSenhaComponent } from './features/admin/autenticacao/recuperar-senha/recuperar-senha.component';
 
-
 const routes: Routes = [
   {    
     path : 'login', 
