@@ -1,34 +1,14 @@
-<body class="body">
-  <h1 class="titulo" >NOTÍCIAS</h1>
-  
-  <app-card-datails
-    routerLink="/noticia"
-    title="Título da Noticia" 
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    a type specimen book. dummy text of the printing and typesetting industry.  
-    a type specimen book. dummy text of the printing and typesetting industry.">
-  </app-card-datails>
-  <app-card-datails
-    routerLink="/noticia"
-    title="Título da Noticia" 
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    a type specimen book. dummy text of the printing and typesetting industry.  
-    a type specimen book. dummy text of the printing and typesetting industry.">
-  </app-card-datails>
-  <app-card-datails 
-    routerLink="/noticia"
-    title="Título da Noticia" 
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    a type specimen book. dummy text of the printing and typesetting industry.  
-    a type specimen book. dummy text of the printing and typesetting industry.">
-  </app-card-datails>
-  <app-card-datails
-    routerLink="/noticia"
-    title="Título da Noticia" 
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    a type specimen book. dummy text of the printing and typesetting industry.  
-    a type specimen book. dummy text of the printing and typesetting industry.">
-  </app-card-datails>
-  
-</body>
+<main class="body">
+  <h1 class="titulo">NOTÍCIAS</h1>
+
+  <ul>
+    <li *ngFor="let noticia of noticias">
+      <app-card-datails 
+        routerLink="/noticia" 
+        [title]="noticia.title"
+        [desc]="noticia.subtitle">
+      </app-card-datails>
+    </li>
+  </ul>
+</main>
 <app-footer></app-footer>
