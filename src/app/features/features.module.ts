@@ -32,6 +32,7 @@ import { ListAdminComponent } from "../shared/components/list-admin/list-admin.c
 import { ProjetoComponent } from './public/projeto/projeto.component';
 import { NoticiaComponent } from './public/noticia/noticia.component';
 import { ListaProjetosComponent } from './public/lista-projetos/lista-projetos.component';
+import { ListarNoticiasComponent } from "./admin/noticia/listar-noticias/listar-noticias.component";
 
 @NgModule({
     declarations: [
@@ -52,6 +53,7 @@ import { ListaProjetosComponent } from './public/lista-projetos/lista-projetos.c
       ProjetoComponent,
       NoticiaComponent,
       ListaNoticiasComponent,
+      ListarNoticiasComponent,
       ListaProjetosComponent
     ],
     imports: [
