@@ -1,37 +1,15 @@
-<body class="body">
+<main class="body">
   <h1 class="titulo">NOSSOS PROJETOS</h1>
 
-  <app-card-datails
-    routerLink="/projeto"
-    title="Nome do projeto"
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-  a type specimen book. dummy text of the printing and typesetting industry.  
-  a type specimen book. dummy text of the printing and typesetting industry."
-  >
-  </app-card-datails>
-  <app-card-datails
-    routerLink="/projeto"
-    title="Nome do projeto"
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    a type specimen book. dummy text of the printing and typesetting industry.  
-    a type specimen book. dummy text of the printing and typesetting industry."
-  >
-  </app-card-datails>
-  <app-card-datails
-    routerLink="/projeto"
-    title="Nome do projeto"
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    a type specimen book. dummy text of the printing and typesetting industry.  
-    a type specimen book. dummy text of the printing and typesetting industry."
-  >
-  </app-card-datails>
-  <app-card-datails
-    routerLink="/projeto"
-    title="Nome do projeto"
-    desc="Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-    a type specimen book. dummy text of the printing and typesetting industry.  
-    a type specimen book. dummy text of the printing and typesetting industry."
-  >
-  </app-card-datails>
-</body>
+  <ul>
+    <li *ngFor="let projeto of projetos">
+      <app-card-datails
+        routerLink="/projeto"
+        [title]="projeto.name"
+        [desc]="projeto.description">
+      </app-card-datails>
+    </li>
+  </ul>
+</main>
+
 <app-footer></app-footer>
