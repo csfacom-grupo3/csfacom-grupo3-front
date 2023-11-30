@@ -2,6 +2,7 @@
   padding: 15px;
   box-shadow: 0.2px 2px 3px 1px #aaaaaa;
   margin-top: 1rem;
+  width: 60%;
 }
 
 .botaoCad {
@@ -19,4 +20,37 @@
 
 .botoes button {
   margin: 0 1rem; 
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-list div {
+  cursor: pointer;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-list div:hover {
+  background-color: #f0f0f0;
+}
+
+.user-list div {
+  cursor: pointer;
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-list div:hover {
+  background-color: #f0f0f0;
+}
+
+.user-list div.selected {
+  background-color: #b3e0ff;
+}
+.projetos-container {
+  text-align: center;
+  margin-bottom: 2rem; 
 }

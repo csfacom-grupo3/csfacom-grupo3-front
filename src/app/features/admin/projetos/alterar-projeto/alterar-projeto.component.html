@@ -1,0 +1,31 @@
+<div class="cardProjeto h-full flex justify-center items-center m-4">
+    <main class="w-9/12 bg-azul-10 rounded-2xl borda-opaca-md center flex-col">
+      <h1 class="center m-4"><strong>Alterar Projeto</strong></h1>
+  
+      <form [formGroup]="projetoForm" class="center flex-col w-full">
+  
+        <!-- Input para o nome do projeto -->
+        <input formControlName="name" class="inputs input" type="text" placeholder="Nome do Projeto *">
+  
+        <!-- Input para a descrição do projeto -->
+        <textarea formControlName="description" class="inputs textarea" placeholder="Descrição do Projeto *"></textarea>
+  
+        <!-- Input para a data de início do projeto -->
+        <input formControlName="start_date" class="inputs input" type="date" placeholder="Data de Início">
+  
+        <!-- Input para a data de término do projeto -->
+        <input formControlName="end_date" class="inputs input" type="date" placeholder="Data de Término">
+  
+        <!-- Input para o coordenador do projeto -->
+        <select formControlName="coordinator_id" class="inputs select">
+          <option *ngFor="let user of users" [value]="user.id">{{ user.name }}</option>
+        </select>
+  
+        <!-- Botões -->
+        <div>
+          <button class="botaoCad botao-vermelho m-2" (click)="voltar()">Cancelar</button>
+          <button class="botaoCad botao-verde m-2" [disabled]="!projetoForm.valid" (click)="salvarAlteracoes()">Salvar Alterações</button>
+        </div>
+      </form>
+    </main>
+  </div>

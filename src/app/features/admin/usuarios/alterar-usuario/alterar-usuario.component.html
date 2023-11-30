@@ -1,8 +1,7 @@
-<app-loader *ngIf="loader"></app-loader>
-
 <div class="cardUsuario h-full flex justify-center items-center m-4">
   <main class="w-9/12 bg-azul-10 rounded-2xl borda-opaca-md center flex-col">
     <h1 class="center m-4"><strong>Alterar usuário do sistema</strong></h1>
+    
     <form [formGroup]="usuarioForm" class="center flex-col w-full">
 
       <div class="custom-file-input">
@@ -14,23 +13,17 @@
       </div>
 
       <input formControlName="name" class="inputs icon-usuario input" type="text" placeholder="Nome completo *">
-      <!-- Adicione validações aqui se necessário -->
-      <!-- Exemplo: <mat-error *ngIf="usuarioForm.get('name')?.errors?.['required']">Nome é obrigatório</mat-error> -->
 
       <input formControlName="email" class="inputs icon-email input" type="text" placeholder="E-mail *">
-      <!-- Adicione validações aqui se necessário -->
 
       <input formControlName="linkedin" class="inputs icon-linkedin input" type="text" placeholder="Linkedin">
 
       <input formControlName="github" class="inputs icon-github input" type="text" placeholder="Github">
 
       <input formControlName="password" class="inputs icon-senha input" type="password" placeholder="Senha *">
-      <!-- Adicione validações aqui se necessário -->
 
       <input formControlName="password_confirmation" class="inputs icon-senha input" type="password" placeholder="Repetir a senha *">
-      <!-- Adicione validações aqui se necessário -->
 
-      <!-- Botões -->
       <div>
         <button class="botaoCad botao-vermelho m-2" (click)="voltar()">Voltar</button>
         <button class="botaoCad botao-verde m-2" [disabled]="!usuarioForm.valid" (click)="salvarAlteracoes()">Salvar Alterações</button>
