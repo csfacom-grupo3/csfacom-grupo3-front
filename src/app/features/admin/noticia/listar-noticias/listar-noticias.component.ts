@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/core/service/Api.Service';
   styleUrls: ['./listar-noticias.component.css']
 })
 export class ListarNoticiasComponent implements OnInit {
-  noticias: any[] = [];
+  news: any[] = [];
 
   constructor(private apiService: ApiService, private router: Router) {}
 
@@ -19,7 +19,8 @@ export class ListarNoticiasComponent implements OnInit {
   carregarNoticias(): void {
     this.apiService.get('news')
       .subscribe((data) => {
-        this.noticias = data;
+        console.log('Dados recebidos:', data);
+        this.news = data;
       });
   }
 

@@ -1,17 +1,35 @@
 <div class="alterar-noticia-container">
-    <h2>Alterar Notícia</h2>
-  
-    <form [formGroup]="alterarNoticiaForm" (ngSubmit)="salvarAlteracoes()">
-      <div class="form-group">
-        <label for="titulo">Título:</label>
-        <input type="text" formControlName="titulo" id="titulo">
-      </div>
-  
-      <div class="form-group">
-        <label for="conteudo">Conteúdo:</label>
-        <textarea formControlName="conteudo" id="conteudo" rows="8"></textarea>
-      </div>
-  
-      <button type="submit" [disabled]="alterarNoticiaForm.invalid">Salvar Alterações</button>
-    </form>
-  </div>
+  <h2>Alterar Notícia</h2>
+
+  <form [formGroup]="alterarNoticiaForm" (ngSubmit)="salvarAlteracoes()">
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input type="text" formControlName="title" id="title">
+    </div>
+
+    <div class="form-group">
+      <label for="subtitle">Subtítulo:</label>
+      <input type="text" formControlName="subtitle" id="subtitle">
+    </div>
+
+    <div class="form-group">
+      <label for="content">Conteúdo:</label>
+      <textarea formControlName="content" id="content" rows="8"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="visibilidade">Visibilidade:</label>
+      <select formControlName="visibility" id="visibility">
+        <option value="visible">Visible</option>
+        <option value="draft">Draft</option>
+        <option value="invisible">Invisible</option>
+      </select>
+    </div>
+    
+
+    <div class="button-container">
+      <button type="button" (click)="voltar()" class="btn-voltar">Voltar</button>
+      <button type="submit" [disabled]="alterarNoticiaForm.invalid" class="btn-salvar">Salvar Alterações</button>
+    </div>
+  </form>
+</div>

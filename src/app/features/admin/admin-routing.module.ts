@@ -11,6 +11,7 @@ import { ListarNoticiasComponent } from './noticia/listar-noticias/listar-notici
 import { NovaNoticiaComponent } from './noticia/nova-noticia/nova-noticia.component';
 import { AlterarUsuarioComponent } from './usuarios/alterar-usuario/alterar-usuario.component';
 import { AlterarProjetosComponent } from './projetos/alterar-projeto/alterar-projeto.component';
+import { AlterarNoticiaComponent } from './noticia/alterar-noticia/alterar-noticia.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,12 @@ const routes: Routes = [
   {
     path: 'secao-administrativa/nova-noticia', 
     component: NovaNoticiaComponent,
+    canActivate : [authGuard]
+  }
+  ,
+  {
+    path: 'secao-administrativa/alterar-noticia/:id', 
+    component: AlterarNoticiaComponent,
     canActivate : [authGuard]
   }
 ];

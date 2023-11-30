@@ -19,8 +19,10 @@ export class AlterarNoticiaComponent implements OnInit {
     private router: Router
   ) {
     this.alterarNoticiaForm = this.formBuilder.group({
-      titulo: ['', Validators.required],
-      conteudo: ['', Validators.required]
+      title: ['', Validators.required],
+      subtitle: ['', Validators.required],
+      content: ['', Validators.required],
+      visibility: [''] 
     });
 
     this.noticiaId = this.route.snapshot.paramMap.get('id') || '';
@@ -31,23 +33,29 @@ export class AlterarNoticiaComponent implements OnInit {
   }
 
   carregarNoticia(): void {
-    this.apiService.getById(`noticias/${this.noticiaId}`)
+    this.apiService.getById(`news/${this.noticiaId}`)
       .subscribe((noticia) => {
         this.alterarNoticiaForm.patchValue({
-          titulo: noticia.titulo,
-          conteudo: noticia.conteudo
+          title: noticia.title,
+          subtitle: noticia.subtitle,
+          content: noticia.content,
+          visibility: noticia.visibility
         });
       });
   }
 
   salvarAlteracoes(): void {
     if (this.alterarNoticiaForm.valid) {
-      const { titulo, conteudo } = this.alterarNoticiaForm.value;
+      const { title, subtitle, content, visibility } = this.alterarNoticiaForm.value;
 
-      this.apiService.put(`noticias/${this.noticiaId}`, { titulo, conteudo })
+      this.apiService.put(`news/${this.noticiaId}`, { title, subtitle, content, visibility })
         .subscribe(() => {
-          this.router.navigate(['/listar-noticia']);
+          this.router.navigate(['secao-administrativa/listar-noticias']);
         });
     }
+  }
+
+  voltar(): void {
+    this.router.navigate(['secao-administrativa/listar-noticias']);
   }
 }

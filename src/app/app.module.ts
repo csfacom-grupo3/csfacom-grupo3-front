@@ -14,6 +14,9 @@ import { SucessoAdicaoComponent } from './shared/components/sucesso-adicao/suces
 import { NoticiaComponent } from './feature/public/noticia/noticia.component';
 import { AlterarUsuarioComponent } from './features/admin/usuarios/alterar-usuario/alterar-usuario.component';
 import { AlterarProjetosComponent } from './features/admin/projetos/alterar-projeto/alterar-projeto.component';
+import { ListarNoticiasComponent } from './features/admin/noticia/listar-noticias/listar-noticias.component';
+import { AlterarNoticiaComponent } from './features/admin/noticia/alterar-noticia/alterar-noticia.component';
+import { NovaNoticiaComponent } from './features/admin/noticia/nova-noticia/nova-noticia.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { AlterarProjetosComponent } from './features/admin/projetos/alterar-proj
     NoticiaComponent,
     AlterarUsuarioComponent,
     AlterarProjetosComponent,
+    AlterarNoticiaComponent,
+    ListarNoticiasComponent,
+    NovaNoticiaComponent
   ],
   imports: [
     BrowserModule,

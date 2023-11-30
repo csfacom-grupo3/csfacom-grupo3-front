@@ -1,16 +1,16 @@
 <div class="listar-noticias-container">
   <h2>Listagem de Notícias</h2>
 
-  <div *ngIf="noticias.length === 0" class="mensagem-vazia">
+  <div *ngIf="news.length === 0" class="mensagem-vazia">
     <p>Nenhuma notícia encontrada.</p>
   </div>
 
-  <div *ngFor="let noticia of noticias" class="noticia-item">
-    <h3>{{ noticia.titulo }}</h3>
-    <p>{{ noticia.conteudo }}</p>
+  <div *ngFor="let new of news" class="noticia-item">
+    <h3>{{ new.title }}</h3>
+    <p>{{ new.subtitle }}</p>
     <div class="button-container">
-      <button (click)="redirecionarParaAlterar(noticia.id)" class="alterar-btn">Alterar</button>
-      <button class="excluir-btn" (click)="confirmarExclusao(noticia.id)">Excluir</button>
+      <button (click)="redirecionarParaAlterar(new.id)" class="alterar-btn">Alterar</button>
+      <button class="excluir-btn" (click)="confirmarExclusao(new.id)">Excluir</button>
     </div>
     <hr>
   </div>
