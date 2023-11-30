@@ -42,34 +42,42 @@ export class AlterarUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.carregarUsuario();
-    this.buscarVinculos();
+    //this.buscarVinculos();
   }
 
   carregarUsuario(): void {
-    this.apiService.getById(`usuarios/${this.userId}`)
+    this.apiService.getById(`users/${this.userId}`)
       .subscribe((usuario) => {
-        this.usuarioForm.patchValue(usuario);
-        // Preencha o formulário com os dados do usuário
+        this.usuarioForm.setValue({
+          foto: usuario.foto || null,
+          name: usuario.name || null,
+          email: usuario.email || null,
+          linkedin: usuario.linkedin || null,
+          github: usuario.github || null,
+          password: usuario.password || null,
+          password_confirmation: usuario.password_confirmation || null,
+        });
       });
   }
 
   salvarAlteracoes(): void {
     if (this.usuarioForm.valid) {
       const dadosUsuario = this.usuarioForm.value;
-      this.apiService.put(`usuarios/${this.userId}`, dadosUsuario)
+      this.apiService.put(`users/${this.userId}`, dadosUsuario)
         .subscribe(() => {
           this.router.navigate(['/secao-administrativa/listar-usuarios']);
         });
     }
   }
 
+  /*
   abrirModal(): void {
     this.dialog.open(SucessoAdicaoComponent, {
       height: '35%',
       width: '50%',
     });
   }
-
+  
   buscarVinculos(): void {
     this.apiService.get('academic_bonds')
       .subscribe({
@@ -93,6 +101,7 @@ export class AlterarUsuarioComponent implements OnInit {
         this.buscarVinculos();
       });
   }
+  */
 
   voltar(): void {
     this.router.navigate(['/secao-administrativa/listar-usuarios']);

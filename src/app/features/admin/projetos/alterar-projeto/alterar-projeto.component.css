@@ -1,0 +1,54 @@
+.cardProjeto {
+    /* Adicione estilos específicos para o cartão do projeto aqui */
+    /* Por exemplo: */
+    width: 80%;
+    /* ... */
+  }
+  
+  .inputs {
+    /* Estilos gerais para inputs */
+    /* Adapte conforme necessário */
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .textarea {
+    /* Estilos específicos para textarea */
+    /* Adapte conforme necessário */
+    height: 100px;
+    resize: vertical; /* Permite redimensionar verticalmente */
+  }
+  
+  .select {
+    /* Estilos para select */
+    /* Adapte conforme necessário */
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .botaoCad {
+    /* Estilos para botões */
+    /* Adapte conforme necessário */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .botao-verde {
+    /* Estilos para o botão de salvar */
+    /* Adapte conforme necessário */
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .botao-vermelho {
+    /* Estilos para o botão de cancelar */
+    /* Adapte conforme necessário */
+    background-color: #f44336;
+    color: white;
+  }

@@ -1,3 +1,4 @@
+
 <div class="projetos-container">
   <h2>Cadastrar novo projeto</h2>
 
@@ -17,13 +18,7 @@
       placeholder="Descrição do projeto">
     <input formControlName="start_date" class="inputs icon-calendario input" type="date" placeholder="Data de início">
     <input formControlName="end_date" class="inputs icon-calendario input" type="date" placeholder="Data de término">
-    <!-- 
-            <select
-                class="input">
-                <option>Selecione o status do projeto</option>
-                <option>2</option>
-            </select>
-            -->
+
 
     <select formControlName="coordinator_id" class="input">
       <option [ngValue]="null">Selecione o coordenador</option>
@@ -32,8 +27,24 @@
       </option>
     </select>
 
+    <div class="projeto-container">
+      <h2>Adicionar Membros ao Projeto</h2>
+      <div class="user-list">
+        <div class="user-list">
+          <div *ngFor="let user of users" [class.selected]="isSelected(user.id)" (click)="adicionarMembros(user.id)">
+            <span>{{ user.name }}</span>
+            <select name="roles" class="input w-full ml-0" formControlName="{{ 'role_' + user.id }}">
+              <option value="0">Selecione a função do usuário</option>
+              <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="botoes">
-      <button class="botaoCad botao-azul m-2" (click)="adicionarMembros()">Adicionar membros</button>
       <button class="botao-vermelho m-2" (click)="voltar()">Voltar</button>
       <button class="botao-verde m-2" (click)="gravar()">Salvar</button>
     </div>
+  </form>
+</div>
