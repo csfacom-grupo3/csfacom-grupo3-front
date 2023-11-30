@@ -6,8 +6,8 @@
   </div>
 
   <div *ngFor="let noticia of noticias" class="noticia-item">
-    <h3>{{ noticia.title }}</h3>
-    <p>{{ noticia.subtitle }}</p>
+    <h3>{{ noticia.titulo }}</h3>
+    <p>{{ noticia.conteudo }}</p>
     <div class="button-container">
       <button (click)="redirecionarParaAlterar(noticia.id)" class="alterar-btn">Alterar</button>
       <button class="excluir-btn" (click)="confirmarExclusao(noticia.id)">Excluir</button>
