@@ -35,6 +35,11 @@ export class NovoProjetoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.apiService.get('roles')
+      .subscribe((data: any[]) => {
+        this.roles = data;
+      });
+  
     this.apiService.get('users')
       .subscribe((data: any[]) => {
         this.users = data;
@@ -118,9 +123,7 @@ export class NovoProjetoComponent implements OnInit {
         userSpan.classList.add('selected');
       }
     }
-  
-    // Verifica se o array membrosProjeto está sendo atualizado corretamente
-    console.log('Membros do projeto:', this.membrosProjeto);
+    //console.log('Membros do projeto:', this.membrosProjeto);
   }
   
   isSelected(userId: string): boolean {

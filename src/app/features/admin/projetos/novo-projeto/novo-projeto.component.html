@@ -35,7 +35,7 @@
             <span>{{ user.name }}</span>
             <select name="roles" class="input w-full ml-0" formControlName="{{ 'role_' + user.id }}">
               <option value="0">Selecione a função do usuário</option>
-              <option *ngFor="let role of roles" [value]="role.id">{{ role.name }}</option>
+              <option *ngFor="let role of roles" [value]="role.id">{{ role.role_kind }}</option>
             </select>
           </div>
         </div>
