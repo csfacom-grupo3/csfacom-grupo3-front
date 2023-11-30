@@ -1,26 +1,45 @@
-import { Component } from '@angular/core';
-import { ApiService } from 'src/app/core/service/Api.Service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/core/service/Api.Service';
 
 @Component({
   selector: 'app-nova-noticia',
   templateUrl: './nova-noticia.component.html',
   styleUrls: ['./nova-noticia.component.css']
 })
-export class NovaNoticiaComponent {
+export class NovaNoticiaComponent implements OnInit {
+  novaNoticiaForm: FormGroup;
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private apiService: ApiService,
+    private router: Router
+  ) {
+    this.novaNoticiaForm = this.formBuilder.group({
+      title: ['', Validators.required],
+      subtitle: ['', Validators.required],
+      content: ['', Validators.required],
+      visibility: ['', Validators.required]
+    });
+  }
 
-  criarNoticia(titulo: string, conteudo: string): void {
-    const novaNoticia = {
-      titulo: titulo,
-      conteudo: conteudo
-      // Adicione outros campos conforme necessário para a notícia
-    };
+  ngOnInit(): void {
+    // Lógica de inicialização, se necessário
+  }
 
-    this.apiService.post('noticias', novaNoticia)
-      .subscribe(() => {
-        this.router.navigate(['/noticias']); // Redireciona para a lista de notícias após o sucesso
-      });
+  criarNoticia(): void {
+    if (this.novaNoticiaForm.valid) {
+      const { title, subtitle, content, visibility } = this.novaNoticiaForm.value;
+
+      this.apiService.post('news', { title, subtitle, content, visibility })
+        .subscribe(() => {
+          this.router.navigate(['secao-administrativa/listar-noticias']);
+        });
+    }
+  }
+
+  voltar(): void {
+    this.router.navigate(['secao-administrativa/listar-noticias']);
   }
 }
