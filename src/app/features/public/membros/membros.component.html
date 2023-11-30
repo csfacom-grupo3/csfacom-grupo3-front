@@ -4,6 +4,7 @@
   <ul>
     <li *ngFor="let usuario of usuarios">
   <app-card-datails 
+    [foto]="usuario.avatar_url"
     [title]="usuario.name" 
     [desc]="usuario.description">
     </app-card-datails>
