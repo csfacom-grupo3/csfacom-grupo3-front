@@ -14,10 +14,7 @@ export class NovoProjetoComponent implements OnInit {
   membrosProjeto: string[] = [];
   imagem = "../../../../../assets/icons/novo-projeto/engrenagem.svg";
   users: any[] = [];
-  roles: any[] = [
-    { id: 1, name: 'Role 1' },
-    { id: 2, name: 'Role 2' },
-  ];
+  roles: any[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
