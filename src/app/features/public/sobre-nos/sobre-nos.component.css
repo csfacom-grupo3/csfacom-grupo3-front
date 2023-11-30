@@ -9,6 +9,7 @@
 .body{
   margin-left: 10rem;
   max-width: 100rem;
+  min-height: 50vh;
 }
 
 .sub-titulo{
@@ -22,6 +23,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 25px;
 }
+
 img{
   max-height: 20px;
 }

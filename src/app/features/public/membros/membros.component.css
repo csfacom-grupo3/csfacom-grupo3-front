@@ -1,6 +1,6 @@
 .body{
   margin-left: 10rem;
-
+  min-height: 50vh;
 }
 .titulo{
   display: flex;
