@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  usuarioLogado() : boolean{
+    return sessionStorage.getItem('email') ? true : false;
+  }
+
   title = 'portal-ledes';
 }
