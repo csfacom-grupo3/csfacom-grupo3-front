@@ -10,6 +10,7 @@ import { ListaNoticiasComponent } from './features/public/lista-noticias/lista-n
 import { SobreNosComponent } from './features/public/sobre-nos/sobre-nos.component';
 import { LoginComponent } from './features/admin/autenticacao/login/login.component';
 import { RecuperarSenhaComponent } from './features/admin/autenticacao/recuperar-senha/recuperar-senha.component';
+import { NoticiaComponent } from './features/public/noticia/noticia.component';
 
 const routes: Routes = [
   {    
@@ -51,6 +52,10 @@ const routes: Routes = [
     path:'contatos',
     component: ContatosComponent
   },
+  {
+    path:'noticia',
+    component: NoticiaComponent
+  }
 ];
 
 @NgModule({
