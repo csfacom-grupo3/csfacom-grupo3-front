@@ -65,7 +65,8 @@ export class NovoUsuarioComponent implements OnInit{
     .subscribe({
       next: (data) => {   
         this.formClient.reset({
-          academic_bond_id: 0
+          academic_bond_id: 0,
+          permission : 0 
         });
         this.abrirModal();
         this.loader = false;
