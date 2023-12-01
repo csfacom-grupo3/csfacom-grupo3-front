@@ -52,3 +52,48 @@
     background-color: #f44336;
     color: white;
   }
+  
+
+  
+  .botoes {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .botoes button {
+    margin: 0 1rem; 
+  }
+  
+  .user-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-list div {
+    cursor: pointer;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .user-list div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .user-list div {
+    cursor: pointer;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .user-list div:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .user-list div.selected {
+    background-color: #b3e0ff;
+  }
+  .projetos-container {
+    text-align: center;
+    margin-bottom: 2rem; 
+  }
