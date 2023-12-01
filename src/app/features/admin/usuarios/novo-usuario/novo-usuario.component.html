@@ -34,19 +34,12 @@
                 class="inputs icon-usuario input"
                 type="text"
                 placeholder="Nome completo *">
-            <mat-error 
-                *ngIf="formClient.get('name')?.errors?.['required']">Nome é obrigatório</mat-error>
 
             <input
                 formControlName="email"
                 class="inputs icon-email input" 
                 type="text"
                 placeholder="E-mail *">
-            <mat-error 
-                *ngIf="formClient.get('email')?.errors?.['required']">E-mail é obrigatório</mat-error>
-
-            <mat-error 
-                *ngIf="formClient.get('email')?.errors?.['email']">Insira um e-mail válido</mat-error>
 
             <input
                 formControlName="linkedin"
@@ -65,18 +58,12 @@
                 class="inputs icon-senha input" 
                 type="password"
                 placeholder="Senha *">
-            <mat-error 
-                *ngIf="formClient.get('password')?.errors?.['required']">Senha é obrigatório</mat-error>
 
             <input
                 formControlName="password_confirmation"
                 class="inputs icon-senha input" 
                 type="password"
                 placeholder="Repetir a senha *">
-            <mat-error 
-                *ngIf="formClient.get('password_confirmation')?.errors?.['required']">Repetir a senha é obrigatório</mat-error>
-            <mat-error 
-                *ngIf="formClient.get('password_confirmation')?.errors?.['min']">A senha deve ter no minímo 8 caracteres</mat-error>
             
             <div 
                 class="w-2/4 flex ">
