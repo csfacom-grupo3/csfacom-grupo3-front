@@ -1,42 +1,31 @@
-# PortalLedes
+# Portal ledes
 
-## Arquitetura de pastas
-```
-|app 
-|  ├── core 
-|      ├── components 
-|      ├── model 
-|  ├── features 
-|  ├── shared 
-```
-**Core:** Aqui fica o núcleo do sistema, componentes como o header e o footer, definições padrão de CSS como o tema e os models deverão ser colocados nessa pasta.
+## Framework
 
-**Features:** Nessa pasta ficam as funcionalidades do sistema separadas por módulos, abaixo um exemplo ilustrativo da separação em modulos
+Angular 16.2.10
 
-```
-|-- features
-    |-- projetos
-        |-- components
-            |-- [+] listar-projetos
-            |-- [+] novo-projeto
-            |-- projetos-components.module.ts
-        |-- projetos.component.ts
-        |-- projetos.component.html
-        |-- projetos.component.scss
-        |-- projetos.component.spec
-        |-- projetos.module.ts
-    |-- usuarios
-        |-- components
-            |-- [+] listar-usuarios
-            |-- [+] novo-usuario
-            |-- usuarios-components.module.ts
-        |-- usuarios.component.ts
-        |-- usuarios.component.html
-        |-- usuarios.component.scss
-        |-- usuarios.component.spec
-        |-- usuarios.module.ts
+## Clonando o Repositório
+
+Para começar, clone este repositório para o seu ambiente local. Abra o terminal e execute o seguinte comando:
+
+``` bash
+git clone https://github.com/csfacom-grupo3/csfacom-grupo3-front.git
 ```
 
-**Shared:** Essa é a pasta destinada a tudo que compartilhado no sistema, componentes reutilizaveis, pipes, etc.
-#
-***OBS:** Como ainda não há componentes as pastas não foram mapeadas pelo git*
+## Instalando as Dependências
+
+Agora, instale as dependências necessárias utilizando o npm (Node Package Manager). Execute o seguinte comando:
+
+```
+npm install
+```
+
+## Rodando a Aplicação
+
+Com as dependências instaladas, você está pronto para rodar a aplicação. Utilize o seguinte comando:
+
+```
+ng serve
+```
+
+Este comando irá compilar o projeto e iniciar um servidor de desenvolvimento. Após a conclusão da compilação, abra o seu navegador e navegue até http://localhost:4200/ para visualizar a aplicação em execução.
