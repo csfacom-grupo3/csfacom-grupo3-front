@@ -123,6 +123,36 @@ export class AlterarProjetosComponent implements OnInit {
   }
 
   gravar(){
-
+    if (this.projetoForm.valid) {
+      const projectData = this.projetoForm.value;
+      const payload = {
+        name: projectData.name,
+        description: projectData.description,
+        start_date: projectData.start_date,
+        end_date: projectData.end_date,
+        coordinator_id: projectData.coordinator_id,
+        project_members_attributes: projectData.project_members_attributes.filter((member: any) => !!member.member_id)
+      };
+  
+      this.apiService.put(`projects/${this.projetoId}`, payload).subscribe((projetoResponse: any) => {
+        const projectId = projetoResponse.id;
+  
+        for (const userId of this.membrosProjeto) {
+          const roleControl = this.projetoForm.get(`role_${userId}`);
+          const selectedRoleId = roleControl ? roleControl.value : '0';
+          if (selectedRoleId !== '0') {
+            const data = {
+              project_id: projectId,
+              user_id: userId,
+              role_id: selectedRoleId
+            };
+  
+            this.apiService.post('project-members', data).subscribe(() => {});
+          }
+        }
+  
+        this.router.navigate(['/secao-administrativa/listar-projetos']);
+      });
+    }
   }
 }
