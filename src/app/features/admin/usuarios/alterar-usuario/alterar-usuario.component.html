@@ -23,11 +23,26 @@
       <input formControlName="password" class="inputs icon-senha input" type="password" placeholder="Senha *">
 
       <input formControlName="password_confirmation" class="inputs icon-senha input" type="password" placeholder="Repetir a senha *">
+      
+      <select
+      formControlName="permission"
+      class="input ml-0 ">
+          <option 
+              value="0">Selecione a permissao *</option>
+          <option 
+              value="admin">Administrador</option>
+          <option 
+              value="projects">Projetos</option>
+          <option 
+              value="news">Noticias</option>
+      </select>
 
       <div>
         <button class="botaoCad botao-vermelho m-2" (click)="voltar()">Voltar</button>
         <button class="botaoCad botao-verde m-2" [disabled]="!usuarioForm.valid" (click)="salvarAlteracoes()">Salvar Alterações</button>
       </div>
+
+      
     </form>
   </main>
 </div>

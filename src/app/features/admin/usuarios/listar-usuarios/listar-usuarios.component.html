@@ -2,7 +2,7 @@
   <h2>Listagem de Usuários</h2>
 
   <div *ngFor="let usuario of usuarios" class="usuario-item">
-    <p>{{ usuario.nome }} - {{ usuario.email }}</p>
+    <p>{{ usuario.name }} - {{ usuario.email }}</p>
     <button (click)="redirecionarParaAlteracao(usuario.id)" class="alterar-btn">Alterar</button>
     <button (click)="redirecionarParaExclusao(usuario.id)" class="excluir-btn">Excluir</button>
     <hr>

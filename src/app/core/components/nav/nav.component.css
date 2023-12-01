@@ -9,6 +9,10 @@
   font-size: 20px;
 }
 
+.logo{
+  cursor: pointer;
+}
+
 .navbar .logo{
   max-width: 95px;
   margin-left: 4rem;

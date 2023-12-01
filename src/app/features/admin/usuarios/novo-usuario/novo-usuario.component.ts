@@ -35,6 +35,7 @@ export class NovoUsuarioComponent implements OnInit{
       password: new FormControl(null, [Validators.min(8), Validators.required]),
       password_confirmation: new FormControl(null, [Validators.min(8), Validators.required]),
       academic_bond_id: new FormControl(0),
+      permission: new FormControl(0)
     });
 
     this.buscarVinculos();
@@ -54,13 +55,18 @@ export class NovoUsuarioComponent implements OnInit{
 
    gravar(){
     const dataForm = this.formClient.value;
+    let permissoes : string[] = []; 
+    permissoes.push(dataForm.permission); 
+    dataForm.permission = permissoes;
+
     this.loader = true;
 
     this._apiService.post("users", dataForm)
     .subscribe({
       next: (data) => {   
         this.formClient.reset({
-          academic_bond_id: 0
+          academic_bond_id: 0,
+          permission : 0 
         });
         this.abrirModal();
         this.loader = false;

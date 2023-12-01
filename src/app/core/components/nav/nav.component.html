@@ -1,6 +1,10 @@
 <header class="navbar">
   
-  <img class="logo" src="assets/ledes_logo.png" alt="logo">
+  <img 
+    routerLink="/secao-administrativa"
+    class="logo" 
+    src="assets/ledes_logo.png" 
+    alt="logo">
   
   <nav class="navegacoes">
       <a routerLink="/home">HOME</a> 
@@ -11,7 +15,14 @@
   </nav>
   
   <div class="login">
-    <a routerLink="/login">LOGIN</a> 
+    <a 
+      *ngIf="!logado"
+      routerLink="/login">LOGIN</a> 
+    
+      <button 
+        (click)="sair()"
+        *ngIf="logado"
+        routerLink="/login">SAIR</button> 
   </div>
 
 </header>

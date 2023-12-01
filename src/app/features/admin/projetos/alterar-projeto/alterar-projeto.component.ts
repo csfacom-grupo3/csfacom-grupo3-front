@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/core/service/Api.Service';
 
@@ -14,6 +14,8 @@ export class AlterarProjetosComponent implements OnInit {
   imagem = "../../../../../assets/icons/novo-projeto/engrenagem.svg";
   users: any[] = [];
   projetoId!: string;
+  membrosProjeto: string[] = [];
+  roles: any[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,20 +28,41 @@ export class AlterarProjetosComponent implements OnInit {
       description: ['', Validators.required],
       start_date: [''],
       end_date: [''],
-      coordinator_id: [1] // Assuming a default coordinator ID
+      coordinator_id: [1],
+      project_members_attributes: this.formBuilder.array([])
     });
   }
 
   ngOnInit(): void {
     this.projetoId = this.route.snapshot.paramMap.get('id') || '';
+    let membros : any[];
+
     this.apiService.get(`projects/${this.projetoId}`)
       .subscribe((projeto: any) => {
         this.projetoForm.patchValue(projeto);
+        membros = projeto.project_members;
+
+
+        this.apiService.get('users')
+        .subscribe((data: any[]) => {
+          this.users = data;
+          this.users.forEach(user => {
+         
+
+            membros.forEach(membro => {
+              if(membro.id == user.id){
+                this.adicionarMembros(user.id)
+              }
+            });
+              
+            this.projetoForm.addControl(`role_${user.id}`, this.formBuilder.control('0'));
+          });
+        });
       });
 
-    this.apiService.get('users')
+      this.apiService.get('roles')
       .subscribe((data: any[]) => {
-        this.users = data;
+        this.roles = data;
       });
   }
 
@@ -68,7 +91,68 @@ export class AlterarProjetosComponent implements OnInit {
     this.router.navigate(['/secao-administrativa/listar-projetos']);
   }
 
-  adicionarMembros(): void {
-    // Lógica para adicionar membros ao projeto
+  isSelected(userId: string): boolean {
+    return this.membrosProjeto.includes(userId);
+  }
+
+  adicionarMembros(userId: string): void {
+    const index = this.membrosProjeto.indexOf(userId);
+    const membersArray = this.projetoForm.get('project_members_attributes') as FormArray;
+    
+    if (index > -1) {
+      this.membrosProjeto.splice(index, 1);
+      membersArray.removeAt(index);
+    } else {
+      this.membrosProjeto.push(userId);
+      membersArray.push(this.formBuilder.group({
+        member_id: userId,
+        role_id: this.projetoForm.get(`role_${userId}`)?.value || '0'
+      }));
+    }
+
+    const userDiv = document.getElementById(`user_${userId}`);
+    const userSpan = userDiv?.querySelector('span');
+  
+    if (userSpan && userDiv) {
+      if (index > -1) {
+        userSpan.classList.remove('selected');
+      } else {
+        userSpan.classList.add('selected');
+      }
+    }
+  }
+
+  gravar(){
+    if (this.projetoForm.valid) {
+      const projectData = this.projetoForm.value;
+      const payload = {
+        name: projectData.name,
+        description: projectData.description,
+        start_date: projectData.start_date,
+        end_date: projectData.end_date,
+        coordinator_id: projectData.coordinator_id,
+        project_members_attributes: projectData.project_members_attributes.filter((member: any) => !!member.member_id)
+      };
+  
+      this.apiService.put(`projects/${this.projetoId}`, payload).subscribe((projetoResponse: any) => {
+        const projectId = projetoResponse.id;
+  
+        for (const userId of this.membrosProjeto) {
+          const roleControl = this.projetoForm.get(`role_${userId}`);
+          const selectedRoleId = roleControl ? roleControl.value : '0';
+          if (selectedRoleId !== '0') {
+            const data = {
+              project_id: projectId,
+              user_id: userId,
+              role_id: selectedRoleId
+            };
+  
+            this.apiService.post('project-members', data).subscribe(() => {});
+          }
+        }
+  
+        this.router.navigate(['/secao-administrativa/listar-projetos']);
+      });
+    }
   }
 }
