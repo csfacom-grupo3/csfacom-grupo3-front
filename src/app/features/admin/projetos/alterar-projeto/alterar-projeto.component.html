@@ -32,7 +32,7 @@
       <div class="user-list">
         <div class="user-list">
           <div *ngFor="let user of users" [class.selected]="isSelected(user.id)" (click)="adicionarMembros(user.id)">
-            <span>{{ user.name }}</span>
+            <span>{{ user.email }}</span>
             <select name="roles" class="input w-full ml-0" formControlName="{{ 'role_' + user.id }}">
               <option value="0">Selecione a função do usuário</option>
               <option *ngFor="let role of roles" [value]="role.id">{{ role.role_kind }}</option>
