@@ -37,6 +37,7 @@ export class AlterarUsuarioComponent implements OnInit {
       github: new FormControl(),
       password: new FormControl(null, [Validators.min(8), Validators.required]),
       password_confirmation: new FormControl(null, [Validators.min(8), Validators.required]),
+      permission: new FormControl(0)
     });
   }
 
@@ -56,6 +57,7 @@ export class AlterarUsuarioComponent implements OnInit {
           github: usuario.github || null,
           password: usuario.password || null,
           password_confirmation: usuario.password_confirmation || null,
+          permission: usuario.permission[0] || null
         });
       });
   }
@@ -63,6 +65,10 @@ export class AlterarUsuarioComponent implements OnInit {
   salvarAlteracoes(): void {
     if (this.usuarioForm.valid) {
       const dadosUsuario = this.usuarioForm.value;
+      let permissoes : string[] = []; 
+      permissoes.push(dadosUsuario.permission); 
+      dadosUsuario.permission = permissoes;
+
       this.apiService.put(`users/${this.userId}`, dadosUsuario)
         .subscribe(() => {
           this.router.navigate(['/secao-administrativa/listar-usuarios']);
